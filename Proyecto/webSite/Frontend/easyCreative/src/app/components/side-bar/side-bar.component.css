@@ -1,0 +1,19 @@
+.lista{
+    list-style:none;
+    padding-left: 0px;
+}
+.divSideBar{
+    background-color: #F8F9FA;
+    border-right: 1px solid #e2e8eb;
+    height: 800px;
+}
+.margenHr{
+    margin-right: 8px;
+    margin-left: 8px;
+}
+.texto-sidebar{
+    padding-left: 0px;
+}
+.parrafo{
+    margin-bottom: 0px;
+}

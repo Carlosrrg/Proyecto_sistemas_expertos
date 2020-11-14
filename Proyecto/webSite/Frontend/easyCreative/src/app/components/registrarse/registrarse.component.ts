@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistrarseComponent implements OnInit {
 
+  tipoUsuarioSelec:string = 'individual';
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  tipoUsuario(tipoUsuarioSelec){
+    this.tipoUsuarioSelec = tipoUsuarioSelec;
+    console.log(this.tipoUsuarioSelec);
   }
 
 }

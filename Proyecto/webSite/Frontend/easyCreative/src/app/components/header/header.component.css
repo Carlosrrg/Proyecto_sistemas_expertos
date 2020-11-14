@@ -1,0 +1,17 @@
+.btn-outline-primary{
+    border: 0px;
+}
+.logo-barra{
+    width: 140px;
+}
+.navbar-light{
+    border-bottom: 1px solid #e2e8eb;
+}
+.campana-notificacion{
+    color: #1486FA;
+    cursor: pointer;
+    /*font-size: 25px;*/
+}
+.campana-notificacion:hover{
+    color: #036fdb;
+}

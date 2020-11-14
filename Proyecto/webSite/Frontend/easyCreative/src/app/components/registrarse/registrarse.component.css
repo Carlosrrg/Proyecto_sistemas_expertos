@@ -6,7 +6,7 @@
 }
 .elementos-inicio{
     width: 600px;
-    height: 840px;
+    height: 820px;
     /*border: 2px solid black;*/
     margin: auto;
     padding: 20px 60px;
@@ -33,6 +33,7 @@
 }
 .copyright{
     text-align: center;
+    margin-bottom: 10px;
 }
 .btn-crear{
     border-radius: 15px;
@@ -41,4 +42,25 @@
 .seleccion-usuario{
     display: block;
     margin: auto;
+}
+.tipo-usuario{
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+.rbt-tipo{
+    background-color: rgb(109, 108, 116);
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.active{
+    background-color: #7F98FF!important;
+}
+.visible{
+    display: block;
+}
+.invisible{
+    display: none;
 }
