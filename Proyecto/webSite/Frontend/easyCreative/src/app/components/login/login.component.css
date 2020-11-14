@@ -1,0 +1,40 @@
+.logo{
+    display: block;
+    margin: auto;
+    width: 300px;
+    margin-top: 30px;
+}
+.elementos-inicio{
+    width: 600px;
+    height: 700px;
+    /*border: 2px solid black;*/
+    margin: auto;
+    padding: 30px 60px;
+}
+.cajas-texto{
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+.titulo-h2{
+    margin-bottom: 10px;
+}
+.btn-iniciar{
+    float: right;
+    border-radius: 15px;
+    width: 150px;
+}
+.chk-recuerdame{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.seccion-crear-cuenta{
+    text-align: center;
+}
+.copyright{
+    text-align: center;
+}
+.btn-crear{
+    border-radius: 15px;
+    width: 200px;
+}

@@ -1,0 +1,44 @@
+.logo{
+    display: block;
+    margin: auto;
+    width: 300px;
+    margin-top: 30px;
+}
+.elementos-inicio{
+    width: 600px;
+    height: 840px;
+    /*border: 2px solid black;*/
+    margin: auto;
+    padding: 20px 60px;
+}
+.cajas-texto{
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 7px;
+}
+.titulo-h2{
+    margin-bottom: 10px;
+}
+.btn-iniciar{
+    float: right;
+    border-radius: 15px;
+    width: 150px;
+}
+.chk-terminos{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.seccion-registrarse{
+    text-align: center;
+}
+.copyright{
+    text-align: center;
+}
+.btn-crear{
+    border-radius: 15px;
+    width: 200px;
+}
+.seleccion-usuario{
+    display: block;
+    margin: auto;
+}
