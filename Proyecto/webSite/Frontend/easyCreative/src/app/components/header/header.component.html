@@ -1,6 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <button type="button" class="btn btn-outline-primary" (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed"
-    aria-controls="collapseExample">
+    <button class="btn btn-outline-primary" (click)="toggleSidebar()">
       <fa-icon [icon]="faBars"></fa-icon>
     </button>&nbsp;&nbsp;
     <a class="navbar-brand" href="#">
@@ -12,6 +11,27 @@
   
     <div class="navbar-collapse" [class.collapse]="collapsed" id="navbarContent">
         <ul class="navbar-nav ml-auto">
+            <li class="nav-item" ngbDropdown>
+                <a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown2" role="button">
+                  <span class="carrito">
+                      <fa-icon [icon]="faShoppingCart"></fa-icon>
+                  </span>    
+                </a>
+                <div ngbDropdownMenu aria-labelledby="navbarDropdown2" class="dropdown-menu">
+                  <a class="ancla-notificacion" href="#">
+                    <div>
+                        Ps5 digital edition - $499
+                    </div>
+                  </a>
+                  <hr class="divisorNotificaciones">
+                  <a class="ancla-notificacion" href="#">
+                    <div>
+                        Xbox series X - $499
+                    </div>
+                  </a>
+                </div>
+            </li>
+            &nbsp;&nbsp;&nbsp;  
           <li class="nav-item" ngbDropdown>
             <a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown2" role="button">
               <span class="campana-notificacion">
@@ -19,7 +39,17 @@
               </span>    
             </a>
             <div ngbDropdownMenu aria-labelledby="navbarDropdown2" class="dropdown-menu">
-              <a ngbDropdownItem href="#" (click)="$event.preventDefault()">No hay notificaciones</a>
+              <a class="ancla-notificacion" href="#">
+                <div>
+                    una notificacion de arministrador
+                </div>
+              </a>
+              <hr class="divisorNotificaciones">
+              <a class="ancla-notificacion" href="#">
+                <div>
+                    Una notificacion del sistema
+                </div>
+               </a>
             </div>
           </li>
           &nbsp;&nbsp;&nbsp;
@@ -37,10 +67,89 @@
 </nav>
 
 <!--Esto se va a usar para ocultar el sidebar-->
-<div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
-  <div class="card">
-    <div class="card-body">
-      You can collapse this card by clicking Toggle
-    </div>
+
+<ng-sidebar-container>
+        
+  <!-- A sidebar -->
+  <ng-sidebar [(opened)]="opened">
+    <!--<div class="col-xl-3 col-lg-3 col-md-3 col-sm-0 col-0 p-0 divSideBar">-->
+      <ul class="mt-4 lista">
+          <li class="efecto">
+              <a>
+                  <div class="container-fluid">
+                      <div class="row">
+                          <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
+                              <fa-icon [icon]="faBuilding"></fa-icon>
+                          </div>
+                          <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10 texto-sidebar">
+                              <p class="parrafo">
+                                  Vizualizacion y gestion de empresas
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+              </a>
+          </li>
+          <hr class="margenHr">
+          <li class="efecto">
+              <a>
+                  <div class="container-fluid">
+                      <div class="row">
+                          <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
+                              <fa-icon [icon]="faTasks"></fa-icon>
+                          </div>
+                          <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10 texto-sidebar">
+                              <p class="parrafo">
+                                  Gestion de planes
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+              </a>
+          </li>
+          <hr class="margenHr">
+          <li class="efecto">
+              <a>
+                  <div class="container-fluid">
+                      <div class="row">
+                          <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
+                              <fa-icon [icon]="faTools"></fa-icon>
+                          </div>
+                          <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10 texto-sidebar">
+                              <p class="parrafo">
+                                  administracion de plantillas o temas
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+              </a>
+          </li>
+          <hr class="margenHr">
+          <li class="efecto">
+              <a>
+                  <div class="container-fluid">
+                      <div class="row">
+                          <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
+                              <fa-icon [icon]="faMarker"></fa-icon>
+                          </div>
+                          <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10 texto-sidebar">
+                              <p class="parrafo">
+                                  Editar/crear nuevos usuarios administradores
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+              </a>
+          </li>
+          <hr class="margenHr">
+      </ul>
+    <!--</div>-->
+
+  </ng-sidebar>
+
+  <!-- Page content -->
+  <div ng-sidebar-content>
+    
   </div>
-</div>
+
+</ng-sidebar-container>

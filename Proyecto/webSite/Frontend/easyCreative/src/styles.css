@@ -1,1 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    height: 100vh;
+    font-size: 13.5px;
+}
+.ng-sidebar{
+    background-color: #F8F9FA;
+    border-right: 1px solid #e2e8eb;
+    width: 250px;
+}
+.lista{
+    list-style:none;
+    padding-left: 0px;
+}
+.divSideBar{
+    background-color: #F8F9FA;
+    border-right: 1px solid #e2e8eb;
+    height: 800px;
+}
+.margenHr{
+    margin-right: 8px;
+    margin-left: 8px;
+}
+.texto-sidebar{
+    padding-left: 0px;
+}
+.parrafo{
+    margin-bottom: 0px;
+}
+.efecto:hover{
+    color: #8097FF;
+    cursor: pointer;
+    
+}

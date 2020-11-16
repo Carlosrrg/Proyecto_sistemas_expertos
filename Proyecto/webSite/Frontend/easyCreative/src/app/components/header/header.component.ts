@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { faBars, faBell } from '@fortawesome/free-solid-svg-icons';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { faBars, faBell, faBuilding, faTasks, faTools, faMarker, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-header',
@@ -7,8 +7,17 @@ import { faBars, faBell } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./header.component.css']
 })
 export class headerComponent implements OnInit {
+  @Output() onSideBar = new EventEmitter();
+
   faBars = faBars;
   faBell = faBell;
+  faBuilding = faBuilding;
+  faTasks = faTasks;
+  faTools = faTools;
+  faMarker = faMarker;
+  faShoppingCart = faShoppingCart;
+
+  opened = true;
 
   collapsed = true; //mostrar el dropdown button
   public isCollapsed = false; //collapsar el sidebar
@@ -16,6 +25,10 @@ export class headerComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  toggleSidebar() {
+    this.opened = !this.opened;
   }
 
 }
