@@ -14,6 +14,13 @@ import { VizualizacionGestionEmpresasComponent } from './components/Administrado
 import { GestionPlanesComponent } from './components/Administrador/gestion-planes/gestion-planes.component';
 import { PlantillaTemasComponent } from './components/Administrador/plantilla-temas/plantilla-temas.component';
 import { NuevosAdministradoresComponent } from './components/Administrador/nuevos-administradores/nuevos-administradores.component';
+import { SideBarComponent } from './components/side-bar/side-bar.component';
+import { ElementosSidebarComponent } from './components/Administrador/elementos-sidebar/elementos-sidebar.component';
+import { EditarPerfilComponent } from './components/usuario/editar-perfil/editar-perfil.component';
+import { MetodoPagoComponent } from './components/usuario/metodo-pago/metodo-pago.component';
+import { HistorialComprasComponent } from './components/usuario/historial-compras/historial-compras.component';
+import { CarritoComprasComponent } from './components/usuario/carrito-compras/carrito-compras.component';
+import { ElementosSidebarUsuarioComponent } from './components/usuario/elementos-sidebar-usuario/elementos-sidebar-usuario.component';
 
 
 @NgModule({
@@ -26,7 +33,14 @@ import { NuevosAdministradoresComponent } from './components/Administrador/nuevo
     VizualizacionGestionEmpresasComponent,
     GestionPlanesComponent,
     PlantillaTemasComponent,
-    NuevosAdministradoresComponent
+    NuevosAdministradoresComponent,
+    SideBarComponent,
+    ElementosSidebarComponent,
+    EditarPerfilComponent,
+    MetodoPagoComponent,
+    HistorialComprasComponent,
+    CarritoComprasComponent,
+    ElementosSidebarUsuarioComponent
   ],
   imports: [
     BrowserModule,

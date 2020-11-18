@@ -1,82 +1,16 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-0 col-0 p-0 divSideBar">
-            <ul class="mt-4 lista">
-                <li>
-                    <a>
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
-                                    <fa-icon [icon]="faBuilding"></fa-icon>
-                                </div>
-                                <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10 texto-sidebar">
-                                    <p class="parrafo">
-                                        Vizualizacion y gestion de empresas
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <hr class="margenHr">
-                <li>
-                    <a>
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
-                                    <fa-icon [icon]="faTasks"></fa-icon>
-                                </div>
-                                <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10 texto-sidebar">
-                                    <p class="parrafo">
-                                        Gestion de planes
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <hr class="margenHr">
-                <li>
-                    <a>
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
-                                    <fa-icon [icon]="faTools"></fa-icon>
-                                </div>
-                                <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10 texto-sidebar">
-                                    <p class="parrafo">
-                                        administracion de plantillas o temas
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <hr class="margenHr">
-                <li>
-                    <a>
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-2">
-                                    <fa-icon [icon]="faMarker"></fa-icon>
-                                </div>
-                                <div class="col-xl-10 col-lg-10 col-md-10 col-sm-10 col-10 texto-sidebar">
-                                    <p class="parrafo">
-                                        Editar/crear nuevos usuarios administradores
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <hr class="margenHr">
-            </ul>
-        </div>
-        <!--contenido que va a la par del side bar-->
-        
-        <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-12">
-
-        </div>
-        
+<!--Esto se va a usar para ocultar el sidebar-->
+<ng-sidebar-container> 
+    <!-- A sidebar -->
+    <ng-sidebar [(opened)]="opened" mode="push">
+        <app-elementos-sidebar></app-elementos-sidebar><!--Elementos de Administrador-->
+    </ng-sidebar>
+    <!-- Page content -->
+    <div ng-sidebar-content>
+        <!--<app-vizualizacion-gestion-empresas></app-vizualizacion-gestion-empresas>-->
+        <!--<app-gestion-planes></app-gestion-planes>-->
+        <!--<app-plantilla-temas></app-plantilla-temas>-->
+        <app-nuevos-administradores></app-nuevos-administradores>
     </div>
-</div>
+</ng-sidebar-container>
+
+  

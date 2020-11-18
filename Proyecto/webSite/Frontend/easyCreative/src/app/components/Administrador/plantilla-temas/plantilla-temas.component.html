@@ -1,1 +1,65 @@
-<p>plantilla-temas works!</p>
+<div class="container">
+    <br>
+    <div class="row">
+        <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-9 tituloSeccion">
+            <h3>Administracion de plantillas o temas disponibles</h3>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3">
+            <button class="btn btn-light">Agregar Plantilla</button>
+        </div>
+    </div>
+    <hr>
+    <table class="table table-hover">
+        <thead>
+            <th>#</th>
+            <th>Plantilla</th>
+            <th>Descripcion</th>
+            <th>Recursos HTML</th>
+            <th>Recursos CSS y JS</th>
+            <th>Recursos</th>
+            <th>Acciones</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Plantilla 1</td>
+                <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</td>
+                <td><a href="#">Abrir en editor</a></td>
+                <td><a href="#">Abrir en editor</a></td>
+                <td>
+                    Imagenes<br>
+                    Videos
+                </td>
+                <td class="overflow-hidden">
+                    <div ngbDropdown container="body">
+                      <button class="btn btn-outline-primary btn-sm" ngbDropdownToggle>Actions</button>
+                      <div ngbDropdownMenu>
+                        <button ngbDropdownItem>Editar</button>
+                        <button ngbDropdownItem>Eliminar</button>
+                      </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Plantilla 2</td>
+                <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</td>
+                <td><a href="#">Abrir en editor</a></td>
+                <td><a href="#">Abrir en editor</a></td>
+                <td>
+                    Imagenes<br>
+                    Videos
+                </td>
+                <td class="overflow-hidden">
+                    <div ngbDropdown container="body">
+                      <button class="btn btn-outline-primary btn-sm" ngbDropdownToggle>Actions</button>
+                      <div ngbDropdownMenu>
+                        <button ngbDropdownItem>Editar</button>
+                        <button ngbDropdownItem>Eliminar</button>
+                      </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

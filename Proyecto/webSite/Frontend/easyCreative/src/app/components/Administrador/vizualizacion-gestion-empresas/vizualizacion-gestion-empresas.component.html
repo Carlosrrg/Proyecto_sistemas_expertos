@@ -1,1 +1,92 @@
-<p>vizualizacion-gestion-empresas works!</p>
+<div class="container">
+    <br>
+    <h3>Visualizacion y gestion de empresas</h3>
+    <hr>
+    <table class="table table-hover">
+        <thead>
+            <th>#</th>
+            <th>Empresa</th>
+            <th>Numero paginas</th>
+            <th>Fecha de registro</th>
+            <th>Cantidad de productos registrados</th>
+            <th>Tipo de plan</th>
+            <th>Acciones</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Empresa 1</td>
+                <td>1</td>
+                <td>12-12-20</td>
+                <td>12 Productos</td>
+                <td>Free</td>
+                <td class="overflow-hidden">
+                    <div ngbDropdown container="body">
+                      <button class="btn btn-outline-primary btn-sm" ngbDropdownToggle>Actions</button>
+                      <div ngbDropdownMenu>
+                        <button ngbDropdownItem>Eliminar</button>
+                        <button ngbDropdownItem>Bloquear</button>
+                      </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Empresa 2</td>
+                <td>3</td>
+                <td>12-12-19</td>
+                <td>9 Productos</td>
+                <td>Gold</td>
+                <td class="overflow-hidden">
+                    <div ngbDropdown container="body">
+                      <button class="btn btn-outline-primary btn-sm" ngbDropdownToggle>Actions</button>
+                      <div ngbDropdownMenu>
+                        <button ngbDropdownItem>Eliminar</button>
+                        <button ngbDropdownItem>Bloquear</button>
+                      </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+
+<!--
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Items</th>
+        <th scope="col">Actions</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>
+          Item
+          <div>
+            <small class="text-muted">Both &ldquo;Actions&rdquo; table cells define an overflow hidden</small>
+          </div>
+        </td>
+        <td class="overflow-hidden">
+          <div ngbDropdown container="body">
+            <button class="btn btn-outline-primary btn-sm" ngbDropdownToggle>Actions</button>
+            <div ngbDropdownMenu>
+              <button ngbDropdownItem>Edit</button>
+              <button ngbDropdownItem>Duplicate</button>
+              <button ngbDropdownItem>Move</button>
+              <div class="dropdown-divider"></div>
+              <button ngbDropdownItem>Delete</button>
+            </div>
+          </div>
+          <small class="text-muted">Dropdown uses container "body"</small>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+-->

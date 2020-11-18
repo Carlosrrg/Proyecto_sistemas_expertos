@@ -1,1 +1,72 @@
-<p>gestion-planes works!</p>
+<div class="container">
+    <br>
+    <div class="row">
+      <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-9 tituloSeccion">
+          <h3>Planes disponibles</h3>
+      </div>
+      <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-3">
+          <button class="btn btn-light">Agregar Plantilla</button>
+      </div>
+    </div>
+    <hr>
+    <table class="table table-hover">
+        <thead>
+            <th>#</th>
+            <th>Plan</th>
+            <th>Ultima fecha de edicion</th>
+            <th>Descripcion</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Free</td>
+                <td>12-12-20</td>
+                <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia, facere!</td>
+                <td>Gratis</td>
+                <td class="overflow-hidden">
+                    <div ngbDropdown container="body">
+                      <button class="btn btn-outline-primary btn-sm" ngbDropdownToggle>Actions</button>
+                      <div ngbDropdownMenu>
+                        <button ngbDropdownItem>Eliminar</button>
+                        <button ngbDropdownItem>Bloquear</button>
+                      </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Premium</td>
+                <td>12-12-20</td>
+                <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia, facere!</td>
+                <td>$9.99</td>
+                <td class="overflow-hidden">
+                    <div ngbDropdown container="body">
+                      <button class="btn btn-outline-primary btn-sm" ngbDropdownToggle>Actions</button>
+                      <div ngbDropdownMenu>
+                        <button ngbDropdownItem>Eliminar</button>
+                        <button ngbDropdownItem>Bloquear</button>
+                      </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Gold</td>
+                <td>12-12-20</td>
+                <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia, facere!</td>
+                <td>$14.99</td>
+                <td class="overflow-hidden">
+                    <div ngbDropdown container="body">
+                      <button class="btn btn-outline-primary btn-sm" ngbDropdownToggle>Actions</button>
+                      <div ngbDropdownMenu>
+                        <button ngbDropdownItem>Actualizar</button>
+                        <button ngbDropdownItem>Eliminar</button>
+                      </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

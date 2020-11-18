@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { faBars, faBell, faBuilding, faTasks, faTools, faMarker, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faBell, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-header',
@@ -11,10 +11,6 @@ export class headerComponent implements OnInit {
 
   faBars = faBars;
   faBell = faBell;
-  faBuilding = faBuilding;
-  faTasks = faTasks;
-  faTools = faTools;
-  faMarker = faMarker;
   faShoppingCart = faShoppingCart;
 
   opened = true;
@@ -29,6 +25,7 @@ export class headerComponent implements OnInit {
 
   toggleSidebar() {
     this.opened = !this.opened;
+    this.onSideBar.emit(this.opened);
   }
 
 }
