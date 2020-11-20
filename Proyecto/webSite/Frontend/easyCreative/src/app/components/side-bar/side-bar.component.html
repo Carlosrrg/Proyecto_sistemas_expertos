@@ -2,14 +2,21 @@
 <ng-sidebar-container> 
     <!-- A sidebar -->
     <ng-sidebar [(opened)]="opened" mode="push">
-        <app-elementos-sidebar></app-elementos-sidebar><!--Elementos de Administrador-->
+        <!--Elementos de Administrador-->
+        <!--<app-elementos-sidebar></app-elementos-sidebar>--> 
+        <!--Elementos de Usuario-->
+        <app-elementos-sidebar-usuario></app-elementos-sidebar-usuario>
     </ng-sidebar>
     <!-- Page content -->
     <div ng-sidebar-content>
         <!--<app-vizualizacion-gestion-empresas></app-vizualizacion-gestion-empresas>-->
         <!--<app-gestion-planes></app-gestion-planes>-->
         <!--<app-plantilla-temas></app-plantilla-temas>-->
-        <app-nuevos-administradores></app-nuevos-administradores>
+        <!--<app-nuevos-administradores></app-nuevos-administradores>-->
+        <!--<app-editar-perfil></app-editar-perfil>-->
+        <!--<app-metodo-pago></app-metodo-pago>-->
+        <!--<app-historial-compras></app-historial-compras>-->
+        <app-carrito-compras></app-carrito-compras>
     </div>
 </ng-sidebar-container>
 

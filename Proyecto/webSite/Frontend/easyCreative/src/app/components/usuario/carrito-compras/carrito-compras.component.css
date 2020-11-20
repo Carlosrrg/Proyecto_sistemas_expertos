@@ -1,0 +1,16 @@
+.tituloSeccion{
+    padding-right: 0px;
+}
+.btn-outline-primary{
+    border-radius: 15px;
+    float: right;
+    width: 100px;
+}
+table {
+    border: 0px solid #CCC;
+    border-collapse: collapse;
+}
+
+td {
+    border: none;
+}

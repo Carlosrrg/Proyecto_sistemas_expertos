@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faMarker, faCreditCard, faShoppingBag } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-elementos-sidebar-usuario',
@@ -6,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./elementos-sidebar-usuario.component.css']
 })
 export class ElementosSidebarUsuarioComponent implements OnInit {
+
+  faMarker = faMarker;
+  faCreditCard = faCreditCard;
+  faShoppingBag = faShoppingBag;
 
   constructor() { }
 
