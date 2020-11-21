@@ -1,0 +1,61 @@
+.contenido{
+    background-color: #d8e0e9;
+    border-radius: 20px;
+    height: 150px;
+}
+.contenido:hover{
+    background-color: #bec7d1;
+    cursor: pointer;
+}
+.nombre-parafo{
+    text-align: center;
+    padding-top: 60px;
+}
+.btn-light{
+    border: 1px solid #e2e8eb;
+    border-radius: 15px;
+    text-align: center;
+    width: 170px;
+}
+.card{
+    border: 0px;
+    height: 100px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.btn-primary{
+    padding: 2px 4px;
+    border: 0px;
+}
+.boton-pagina{
+    position: absolute;
+    bottom: 5px;
+    right: 25px;
+}
+.pagina-principal{
+    position: absolute;
+    top: 5px;
+    right: 25px;
+}
+.opciones-pagina{
+    margin-bottom: 0px;
+}
+.opciones-parrafos-pagina{
+    margin-bottom: 0px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+.tipo-usuario{
+    display: block;
+    margin: auto;
+}
+.rbt-tipo{
+    background-color: rgb(109, 108, 116);
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.active{
+    background-color: #7F98FF!important;
+}  

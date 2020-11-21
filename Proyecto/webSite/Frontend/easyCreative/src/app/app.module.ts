@@ -21,6 +21,13 @@ import { MetodoPagoComponent } from './components/usuario/metodo-pago/metodo-pag
 import { HistorialComprasComponent } from './components/usuario/historial-compras/historial-compras.component';
 import { CarritoComprasComponent } from './components/usuario/carrito-compras/carrito-compras.component';
 import { ElementosSidebarUsuarioComponent } from './components/usuario/elementos-sidebar-usuario/elementos-sidebar-usuario.component';
+import { AdministracionRecursosComponent } from './components/empresa/administracion-recursos/administracion-recursos.component';
+import { AdministracionPaginasComponent } from './components/empresa/administracion-paginas/administracion-paginas.component';
+import { ConfiguracionSitiosComponent } from './components/empresa/configuracion-sitios/configuracion-sitios.component';
+import { RegistroProductoCategoriaComponent } from './components/empresa/registro-producto-categoria/registro-producto-categoria.component';
+import { AnadirShorcutsComponent } from './components/empresa/anadir-shorcuts/anadir-shorcuts.component';
+import { EditarPerfilEmpresaComponent } from './components/empresa/editar-perfil-empresa/editar-perfil-empresa.component';
+import { ElementosSidebarEmpresaComponent } from './components/empresa/elementos-sidebar-empresa/elementos-sidebar-empresa.component';
 
 
 @NgModule({
@@ -40,7 +47,14 @@ import { ElementosSidebarUsuarioComponent } from './components/usuario/elementos
     MetodoPagoComponent,
     HistorialComprasComponent,
     CarritoComprasComponent,
-    ElementosSidebarUsuarioComponent
+    ElementosSidebarUsuarioComponent,
+    AdministracionRecursosComponent,
+    AdministracionPaginasComponent,
+    ConfiguracionSitiosComponent,
+    RegistroProductoCategoriaComponent,
+    AnadirShorcutsComponent,
+    EditarPerfilEmpresaComponent,
+    ElementosSidebarEmpresaComponent
   ],
   imports: [
     BrowserModule,
