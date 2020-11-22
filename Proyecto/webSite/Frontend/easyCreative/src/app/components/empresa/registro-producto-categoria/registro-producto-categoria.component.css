@@ -1,0 +1,11 @@
+.btn-light{
+    border: 1px solid #e2e8eb;
+    border-radius: 15px;
+    float: right;
+}
+.tituloSeccion{
+    padding-right: 0px;
+}
+.estrellas{
+    color: #8097FF;
+}

@@ -1,1 +1,111 @@
-<p>registro-producto-categoria works!</p>
+<div class="container">
+    <br>
+    <div class="row">
+      <div class="col-xl-8 col-lg-8 col-md-8 col-sm-6 col-6 tituloSeccion">
+          <h3>Categorias</h3>
+      </div>
+      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6">
+          <button class="btn btn-light">Agregar una categoria</button>
+      </div>
+    </div>
+    <hr>
+    <table class="table table-hover">
+        <thead>
+            <th>Categoria</th>
+            <th>Fecha añadio</th>
+            <th>Descripcion</th>
+            <th>Acciones</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Video juegos</td>
+                <td>12-12-20</td>
+                <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia, facere!</td>
+                <td class="overflow-hidden">
+                    <div ngbDropdown container="body">
+                      <button class="btn btn-outline-primary btn-sm" ngbDropdownToggle>Accion</button>
+                      <div ngbDropdownMenu>
+                        <button ngbDropdownItem>Editar</button>
+                        <button ngbDropdownItem>Eliminar</button>
+                      </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Ropa</td>
+                <td>12-12-19</td>
+                <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia, facere!</td>
+                <td class="overflow-hidden">
+                    <div ngbDropdown container="body">
+                      <button class="btn btn-outline-primary btn-sm" ngbDropdownToggle>Accion</button>
+                      <div ngbDropdownMenu>
+                        <button ngbDropdownItem>Editar</button>
+                        <button ngbDropdownItem>Eliminar</button>
+                      </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br><br>
+    <div class="row">
+      <div class="col-xl-8 col-lg-8 col-md-8 col-sm-6 col-6 tituloSeccion">
+          <h3>Productos</h3>
+      </div>
+      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-6">
+          <button class="btn btn-light">Agregar un producto</button>
+      </div>
+    </div>
+    <hr>
+    <table class="table table-hover">
+        <thead>
+            <th>Producto</th>
+            <th>Fecha añadio</th>
+            <th>Descripcion</th>
+            <th>Precio</th>
+            <th>Imagenes</th>
+            <th>Calificacion</th>
+            <th>Acciones</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Ps5</td>
+                <td>12-12-20</td>
+                <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia, facere!</td>
+                <td>$499</td>
+                <td>Img1</td>
+                <td>
+                    5&nbsp;<fa-icon class="estrellas" [icon]="faStar"></fa-icon>
+                </td>
+                <td class="overflow-hidden">
+                    <div ngbDropdown container="body">
+                      <button class="btn btn-outline-primary btn-sm" ngbDropdownToggle>Accion</button>
+                      <div ngbDropdownMenu>
+                        <button ngbDropdownItem>Editar</button>
+                        <button ngbDropdownItem>Eliminar</button>
+                      </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Xbox Series X</td>
+                <td>12-12-20</td>
+                <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Mollitia, facere!</td>
+                <td>$499</td>
+                <td>Img1</td>
+                <td>
+                    5&nbsp;<fa-icon class="estrellas" [icon]="faStar"></fa-icon>
+                </td>
+                <td class="overflow-hidden">
+                    <div ngbDropdown container="body">
+                      <button class="btn btn-outline-primary btn-sm" ngbDropdownToggle>Accion</button>
+                      <div ngbDropdownMenu>
+                        <button ngbDropdownItem>Editar</button>
+                        <button ngbDropdownItem>Eliminar</button>
+                      </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

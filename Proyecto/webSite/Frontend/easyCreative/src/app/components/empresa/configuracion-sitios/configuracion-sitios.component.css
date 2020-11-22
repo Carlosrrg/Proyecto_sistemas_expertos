@@ -1,0 +1,66 @@
+.boton-centrar{
+    text-align: center;
+}
+.contrasena-top{
+    margin-top: 30px;
+}
+.tipo-plan{
+    margin-top: 11px;
+}
+.text-area{
+    width: 100%;
+}
+.btn-anadir{
+    border: 1px solid #e2e8eb;
+    border-radius: 15px;
+    text-align: center;
+    width: 100%;
+}
+.contenido{
+    background-color: #d8e0e9;
+    border-radius: 20px;
+    height: 110px;
+}
+.contenido:hover{
+    background-color: #bec7d1;
+}
+.nombre-parafo{
+    text-align: center;
+    padding-top: 26px;
+}
+.boton-pagina{
+    position: absolute;
+    bottom: 5px;
+    right: 25px;
+}
+.btn-subir{
+    border-radius: 15px;
+}
+.btn-encabezado{
+    border: 1px solid rgb(185, 185, 185);
+}
+.btn-anadir-sub{
+    border: 1px solid #e2e8eb;
+    /*border-radius: 15px;*/
+    width: 100%;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+.lista-footer{
+    padding-left: 3px;
+    padding-right: 3px;
+}
+.tipo-usuario{
+    display: block;
+    margin: auto;
+}
+.rbt-tipo{
+    background-color: rgb(109, 108, 116);
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.active{
+    background-color: #7F98FF!important;
+}  

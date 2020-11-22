@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-registro-producto-categoria',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./registro-producto-categoria.component.css']
 })
 export class RegistroProductoCategoriaComponent implements OnInit {
+
+  faStar = faStar;
 
   constructor() { }
 
