@@ -26,7 +26,21 @@ import { AnadirEditarProductosComponent } from './components/empresa/anadir-edit
 //variable constante instanciada con routes que se usa para el componente a enruptar
 const routes: Routes = [
   { path: 'admin', component: VizualizacionGestionEmpresasComponent },
-  { path: 'admin/VizualizacionGestionEmpresasComponent', component: VizualizacionGestionEmpresasComponent }
+  { path: 'admin/vizualizacion-gestion-empresas', component: VizualizacionGestionEmpresasComponent },
+  { path: 'admin/gestion-planes', component: GestionPlanesComponent },
+  { path: 'admin/administracion-plantilla-temas', component: PlantillaTemasComponent },
+  { path: 'admin/editar-crear-usuarios-administradores', component: NuevosAdministradoresComponent },
+  { path: 'usuario/perfil-usuario', component: EditarPerfilComponent },
+  { path: 'usuario/metodo-pago', component: MetodoPagoComponent },
+  { path: 'usuario/historial-compras', component: HistorialComprasComponent },
+  { path: 'usuario/carrito-compras', component: CarritoComprasComponent },
+  { path: 'admin-companies/id-empresa/editar-perfil-empresa', component: EditarPerfilEmpresaComponent },
+  { path: 'admin-companies/id-empresa/administracion-recursos', component: AdministracionRecursosComponent },
+  { path: 'admin-companies/id-empresa/administracion-paginas', component: AdministracionPaginasComponent },
+  { path: 'admin-companies/id-empresa/configuracion-sitios', component: ConfiguracionSitiosComponent },
+  { path: 'admin-companies/id-empresa/registro-productos-categorias', component: RegistroProductoCategoriaComponent },
+  { path: 'admin-companies/id-empresa/registro-productos', component: AnadirEditarProductosComponent },
+  { path: 'admin-companies/id-empresa/anadir-shortcuts', component: AnadirShorcutsComponent }
 ];
 
 @NgModule({

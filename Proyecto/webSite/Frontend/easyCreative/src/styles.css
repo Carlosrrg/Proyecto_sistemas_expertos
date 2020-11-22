@@ -31,3 +31,6 @@ body{
     color: #8097FF;
     cursor: pointer;
 }
+.active{
+    color: #8097FF
+}
