@@ -64,3 +64,6 @@
 .invisible{
     display: none;
 }
+.logo-ancla:hover{
+    cursor: pointer;
+}

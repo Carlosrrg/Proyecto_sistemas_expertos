@@ -29,6 +29,7 @@ import { AnadirShorcutsComponent } from './components/empresa/anadir-shorcuts/an
 import { EditarPerfilEmpresaComponent } from './components/empresa/editar-perfil-empresa/editar-perfil-empresa.component';
 import { ElementosSidebarEmpresaComponent } from './components/empresa/elementos-sidebar-empresa/elementos-sidebar-empresa.component';
 import { AnadirEditarProductosComponent } from './components/empresa/anadir-editar-productos/anadir-editar-productos.component';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { AnadirEditarProductosComponent } from './components/empresa/anadir-edit
     AnadirShorcutsComponent,
     EditarPerfilEmpresaComponent,
     ElementosSidebarEmpresaComponent,
-    AnadirEditarProductosComponent
+    AnadirEditarProductosComponent,
+    LandingPageComponent
   ],
   imports: [
     BrowserModule,

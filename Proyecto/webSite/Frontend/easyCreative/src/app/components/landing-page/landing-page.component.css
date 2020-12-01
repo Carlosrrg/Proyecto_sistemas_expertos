@@ -1,0 +1,196 @@
+.logo-inicio:hover{
+    cursor: pointer;
+}
+.titulo{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 50px;
+}
+.bg-light{
+    background-color: #FFFFFF!important;
+}
+.logo-navbar{
+    width: 150px;
+}
+.botones-navbar{
+    color: black!important;
+}
+.botones-navbar:hover{
+    color: #8097FF!important;
+    cursor: pointer;
+}
+.active{
+    color: #8097FF!important;
+}
+.linea-divisor{
+    padding-top: 8px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+.inicio{
+    padding-top: 300px;
+}
+.boton-descubrir{
+    border-radius: 25px;
+    width: 200px;
+}
+.boton-descubrir:hover{
+    background-color: #66B7FC!important;
+}
+.caracteristicas{
+    margin-top: 100px;
+}
+.imagen-compra{
+    border-radius: 0px;
+    height: 840px;
+}
+.text-titulo{
+    color: rgb(105, 105, 105);
+}
+.text-frase{
+    color: #9CB5FD;
+}
+.testimonios-div{
+    background-color: white;
+    padding: 15px;
+    margin: 0px;
+}
+.cliente-img{
+    padding-right: 20px;
+}
+.parrafo-cliente{
+    color: #a2a2a2;
+}
+.imagen-resena{
+    margin-left: -80px;
+    margin-right: -45px;
+}
+.ofrecimiento-recuadro{
+    background-color: #FFFFFF;
+    text-align: center;
+    padding: 30px;
+    margin-bottom: 30px;
+    border: 2px solid #FFFFFF;
+}
+.ofrecimiento-recuadro:hover{
+    border: 2px solid #9CB5FD;
+    cursor: pointer;
+}
+.ofrecimientos-div{
+    background-color: #F3F4FF;
+}
+.numeros{
+    background-color: #F3F4FF;
+}
+.single-fact{
+    text-align: center;
+}
+.numero-titulo{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #66B7FC;
+}
+.empresas-mejor-puntuadas{
+    background-color: #474948;
+    color: white;
+}
+.header-text{
+    text-align: center;
+    padding-bottom: 40px;
+}
+.single-service{
+    padding: 30px;
+    margin-bottom: 30px;
+}
+.single-service:hover{
+    background-color: #66B7FC;
+    cursor: pointer;
+}
+.lista-planes{
+    list-style: none;
+}
+.menu-content{
+    padding-bottom: 30px;
+}
+.text-center{
+    text-align: center;
+}
+.titulo-formulario{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/*FOOTER*/
+.divFooter{
+    background-color: #222222;
+    width: 100%;
+    color: #757575;
+    padding-left: 35px;
+    padding-right: 35px;
+}
+.parteArriba{
+    margin-bottom: 70px;
+}
+.parteAbajo{
+    margin-top: 70px;
+}
+.footerTitulo{
+    color: white;
+    /*text-align: center;*/
+}
+.add-on{
+    background:#fff;border-radius:20px;
+    border:1px solid #fff
+}
+.caja-enviar{
+    border:none;
+    border-radius:20px;
+    font-size:13px
+}
+.navbar-form{
+    width:100%
+}
+.btn-enviar{
+    color: white;
+    width: 80px;
+    height: 35px;
+    border: 0px;
+    background-color: #007DFE;
+    margin-top: 0px;
+    border-radius: 20px;
+}
+.input-group-btn{
+    padding: 0px;
+}
+.hrDivisor{
+    border: 1px solid;
+    stop-color: #757575;
+}
+.footer-area{
+    background-color:#222
+}
+.footer-area .footer-bottom{
+    padding-top:40px
+}
+.footer-area .footer-bottom a{
+    color: white
+}
+.footer-area .footer-bottom .footer-social{
+    text-align:right
+}
+.footer-area .footer-bottom .footer-social a{
+    background:#111111;
+    margin:2px;
+    padding:12px 16px;
+    -webkit-transition:all 0.3s ease 0s;
+    -moz-transition:all 0.3s ease 0s;
+    -o-transition:all 0.3s ease 0s;
+    transition:all 0.3s ease 0s
+}
+.footer-area .footer-bottom .footer-social a:hover{
+    background-color:#8490ff
+}
+.footer-area .footer-bottom .footer-social i{
+    color:#cccccc;
+    -webkit-transition:all 0.3s ease 0s;
+    -moz-transition:all 0.3s ease 0s;
+    -o-transition:all 0.3s ease 0s;
+    transition:all 0.3s ease 0s
+}

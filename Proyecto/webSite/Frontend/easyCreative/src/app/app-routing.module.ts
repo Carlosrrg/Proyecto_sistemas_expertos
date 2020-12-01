@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router'; //modulos de enruptamiento en angular
 
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrarseComponent } from './components/registrarse/registrarse.component';
 import { VizualizacionGestionEmpresasComponent } from './components/Administrador/vizualizacion-gestion-empresas/vizualizacion-gestion-empresas.component';
@@ -23,10 +24,17 @@ import { EditarPerfilEmpresaComponent } from './components/empresa/editar-perfil
 import { ElementosSidebarEmpresaComponent } from './components/empresa/elementos-sidebar-empresa/elementos-sidebar-empresa.component';
 import { AnadirEditarProductosComponent } from './components/empresa/anadir-editar-productos/anadir-editar-productos.component';
 
+
 //variable constante instanciada con routes que se usa para el componente a enruptar
 const routes: Routes = [
-  { path: 'admin', component: VizualizacionGestionEmpresasComponent },
-  { path: 'admin/vizualizacion-gestion-empresas', component: VizualizacionGestionEmpresasComponent },
+  { path: 'easy-creative', component: LandingPageComponent },
+  { path: 'inicio-sesion', component: LoginComponent },
+  { path: 'registrarse', component: RegistrarseComponent },
+  { path: '', redirectTo: '/easy-creative', pathMatch: 'full' }
+];
+
+/*
+{ path: 'admin/vizualizacion-gestion-empresas', component: VizualizacionGestionEmpresasComponent } ,
   { path: 'admin/gestion-planes', component: GestionPlanesComponent },
   { path: 'admin/administracion-plantilla-temas', component: PlantillaTemasComponent },
   { path: 'admin/editar-crear-usuarios-administradores', component: NuevosAdministradoresComponent },
@@ -41,7 +49,8 @@ const routes: Routes = [
   { path: 'admin-companies/id-empresa/registro-productos-categorias', component: RegistroProductoCategoriaComponent },
   { path: 'admin-companies/id-empresa/registro-productos', component: AnadirEditarProductosComponent },
   { path: 'admin-companies/id-empresa/anadir-shortcuts', component: AnadirShorcutsComponent }
-];
+
+*/
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)], //le enviamos el nombre de la constante route que instanciamos arriba

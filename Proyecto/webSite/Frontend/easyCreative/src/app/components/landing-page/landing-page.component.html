@@ -1,0 +1,408 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" id="home">
+    <div class="container">
+        <a class="navbar-brand logo-inicio" (click)="paginaInicio()">
+            <img class="logo-navbar" src="../assets/img/logo_sin_fondo.png" alt="Logo empresa">
+        </a>
+        <button class="navbar-toggler" type="button" aria-controls="navbarContent" [attr.aria-expanded]="!collapsed" aria-label="Toggle navigation" (click)="collapsed = !collapsed">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" [class.collapse]="collapsed">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link botones-navbar active" href="#home">INICIO <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link botones-navbar" href="#Caracteristicas">CATACTERISTICAS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link botones-navbar" href="#ofrecemos">QUE OFRECEMOS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link botones-navbar" href="#planes">NUESTROS PLANES</a>
+            </li>
+            <li class="linea-divisor" *ngIf="collapsed == true"><strong>|</strong></li>
+            <li class="nav-item">
+                <a class="nav-link botones-navbar" (click)="navegarIniciarSesion()">INICIAR SECCION</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link botones-navbar" (click)="navegarRegistrarse()">REGISTRARSE</a>
+            </li>
+          </ul>     
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <!-- banner de home -->
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <img src="../assets/img/header-bg.jpg" class="img-fluid" style="position: absolute; right: 0; top: 0; z-index: -100; opacity: 1;">
+        </div>
+        <section class="banner-area relative">
+            <div class="container">
+                <div class="row fullscreen d-flex align-items-center justify-content-end">
+                    <div class="banner-content col-lg-7 col-md-12 inicio">
+                        <h4 class="text-uppercase">Descubre tus capacidades en</h4><br>
+                        <h1 class="titulo">
+                            Easy Creative				
+                        </h1>
+                        <p>
+                            Descubre con nosotros el limite de tus capacidades como disenador de tus propias paginas. crea, publica y vende tu productos de la manera mas rapida y facil como nunca antes visto.
+                        </p>
+                        <a href="#" class="btn btn-outline-primary boton-descubrir">DESCUBRIR AHORA</a>
+                    </div>												
+                </div>
+            </div>
+        </section>
+    </div><br><br><br><br>
+    <div class="row caracteristicas">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <section class="feature-area section-gap" id="Caracteristicas">
+				<div class="container">
+					<div class="row">
+						<div class="single-feature col-lg-4">
+							<img class="img-fluid mb-3" src="../assets/img/f1.png" alt="">
+							<h4>Soporte online</h4>
+							<p>Te brindamos el mejor soporte online personalizado con expertos que te ayudaran a despejar tus dudas en la creacion y publicacion de tus paginas para tu empresa.</p>
+						</div>
+						<div class="single-feature col-lg-4">
+							<img class="img-fluid mb-3" src="../assets/img/f2.png" alt="">
+							<h4>Atencion 24/7</h4>
+							<p>Atencion inmediata en nuestro call center con respecto a inquietudes de nuestros planes, servicios personalizados y mucho mas.</p>
+						</div>
+						<div class="single-feature col-lg-4">
+							<img class="img-fluid mb-3" src="../assets/img/f3.png" alt="">
+							<h4>Herramientas increibles</h4>
+							<p>Tenemos una serie de herramientas y caracteristicas que te haran sentir el mejor diseñador de paginas web con tan solo unos par de clics.</p>
+						</div>												
+					</div>
+				</div>	
+			</section>
+        </div>
+    </div><br>
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <img src="../assets/img/testimonial-bg.jpg" class="img-fluid imagen-compra" style="position: absolute; right: 0; top: 0; z-index: -100; opacity: 0.75;">
+        </div>
+        <section class="testimonial-area relative section-gap">
+            <div class="container pl-5 pr-5">
+                <div class="row d-flex justify-content-center">
+                    <div class="menu-content pb-60 col-lg-8">
+                        <div class="title text-center">
+                            <h1 class="mb-10 text-titulo">Reseñas de nuestros clientes</h1>
+                            <p class="text-frase">Sobre como aman cada caracteristica de la plataforma.</p>
+                        </div>
+                    </div>
+                </div>						
+                <div class="row testimonios-div">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="single-testimonial item d-flex flex-row">
+                            <div class="thumb cliente-img mb-3">
+                                <img class="img-fluid" src="../assets/img/usuario1.jpg" alt="resena1">
+                            </div>
+                            <div class="desc">
+                                <p class="parrafo-cliente">
+                                    Excelentes caracteristicas gracias a Easy Creative pude crear mi propio sitio web para mi tienda sin mayor complicaciones lo recomiendo completamente.
+                                </p>
+                                <h4 mt-30>Pedro Garcia</h4>
+                                <p class="parrafo-cliente">Pollos locos</p>
+                            </div>
+                        </div>
+                        <div class="single-testimonial item d-flex flex-row">
+                            <div class="thumb cliente-img mb-3">
+                                <img class="img-fluid" src="../assets/img/usuario2.jpg" alt="resena2">
+                            </div>
+                            <div class="desc">
+                                <p class="parrafo-cliente">
+                                    Cada uno de sus planes se acomoda a las necesidades que pueda tener uno al crear una tienda yo opte por el plan Premium y es grandioso en todos los sentidos. 
+                                </p>
+                                <h4 mt-30>Luz Ramirez</h4>
+                                <p class="parrafo-cliente">Cosmeticos belleza</p>
+                            </div>
+                        </div>
+                        <div class="single-testimonial item d-flex flex-row">
+                            <div class="thumb cliente-img mb-3">
+                                <img class="img-fluid" src="../assets/img/usuario3.jpg" alt="resena3">
+                            </div>
+                            <div class="desc">
+                                <p class="parrafo-cliente">
+                                    Nunca pense que crear mi propio sitio web para mi negocio seria tan sencillo y facil gracias Easy Creative pude inpulsar mu marca como nunca antes.
+                                </p>
+                                <h4 mt-30>kim Monserrat</h4>
+                                <p class="parrafo-cliente">Equipos medicos</p>
+                            </div>
+                        </div>								
+                    </div>					
+                </div>
+            </div>	
+        </section>
+    </div><br><br><br>
+    <div class="row">
+        <section class="offered-area" id="ofrecemos">
+            <div class="container">
+                <div class="menu-content pb-60 col-lg-8">
+                    
+                </div>					
+                <div class="row align-items-center justify-content-start ofrecimientos-div">
+                    <div class="col-lg-6 offered-left pt-4 pb-2">
+                        <div class="offer-wrap flex-row d-flex row">
+                            <div class="col-4">
+                                <div class="single-offer ofrecimiento-recuadro">
+                                   <img class="img-fluid" src="../assets/img/o1.png" alt="">
+                                </div> 
+                            </div>
+                            <div class="col-4">
+                                <div class="single-offer ofrecimiento-recuadro">
+                                    <img class="img-fluid" src="../assets/img/o2.png" alt="">
+                                </div> 
+                            </div>
+                            <div class="col-4">
+                                <div class="single-offer ofrecimiento-recuadro">
+                                    <img class="img-fluid" src="../assets/img/o3.png" alt="">
+                                </div> 
+                            </div>
+                            <div class="col-4">
+                                <div class="single-offer ofrecimiento-recuadro">
+                                    <img class="img-fluid" src="../assets/img/o4.png" alt="">
+                                </div> 
+                            </div>
+                            <div class="col-4">
+                                <div class="single-offer ofrecimiento-recuadro">
+                                    <img class="img-fluid" src="../assets/img/o5.png" alt="">
+                                </div> 
+                            </div>
+                            <div class="col-4">
+                                <div class="single-offer ofrecimiento-recuadro">
+                                    <img class="img-fluid" src="../assets/img/o6.png" alt="">
+                                </div> 
+                            </div>								
+                        </div>															
+                    </div>
+                    <div class="col-lg-5 offered-right pb-4 pt-4">
+                        <h4>Nuestros ofrecimientos</h4>
+                        <p class="pt-20 pb-20">
+                            Ofrecemos una variada gama de herramientas a todos nuestros usuarios para que puedan diseñar, crear e implementar sus propios sitios web y que estos les ayuden a promocionar y vender sus productos, ya que nuestro principal objetivo es la innovacion y satisfaccion de nuestros clientes.
+                        </p>
+                        <a href="#" class="btn btn-outline-primary boton-descubrir">CONOCER MAS</a>
+                    </div>
+                </div>
+            </div>	
+        </section>
+    </div>
+    <div class="row numeros">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-3 col-md-3 0col-sm-6 col-6 single-fact">
+                        <h1 class="numero-titulo">7236</h1>
+                        <p>Proyectos completados</p>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 0col-sm-6 col-6 single-fact">
+                        <h1 class="numero-titulo">6784</h1>
+                        <p>Empresas registradas</p>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 0col-sm-6 col-6 single-fact">
+                        <h1 class="numero-titulo">12208</h1>
+                        <p>Total de ventas</p>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 0col-sm-6 col-6 single-fact">
+                        <h1 class="numero-titulo">9239</h1>
+                        <p>Reseñas positivas</p>
+                    </div>												
+                </div>
+            </div>	
+    </div>
+    <div class="row empresas-mejor-puntuadas">
+        <section class="service-area section-gap relative">
+            <div class="overlay overlay-bg"></div>
+            <div class="container">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-8 pt-2 pb-40 header-text">
+                        <h1>Empresas mejor puntuadas</h1>
+                        <p>
+                            Conoce las empresas mejor puntuadas y sus mercados.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-service">
+                            <h4><fa-icon [icon]="faTools" class="mr-2"></fa-icon>Expert Technicians</h4>
+                            <p>
+                                Empresa dedicada a la venta y reparacion de todo tipo de dispositivo electronico, dando calidad de servico y garantias por cada negocio completado.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-service">
+                            <h4><fa-icon [icon]="faCertificate" class="mr-2"></fa-icon>La party</h4>
+                            <p>
+                                Organizamos todo tipo de enventos desde bodas hasta cumpleaños agendando todo el evento de inicio a fin de la manera mas profecional posible.
+                            </p>								
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-service">
+                            <h4><fa-icon [icon]="faMobileAlt" class="mr-2"></fa-icon>Telefonia HN</h4>
+                            <p>
+                                Tenemos los mejores precios en telefonos celulares como de oficina con garantias extendidas por problemas de mal funcionamiento.
+                            </p>								
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-service">
+                            <h4><fa-icon [icon]="faRocket" class="mr-2"></fa-icon>Toys and more</h4>
+                            <p>
+                                Somos una tienda enfocada en la diversion de los mas pequenos de la casa contando con todo tipo de juguetes desde autos de carreas hasta drones de vuelo.
+                            </p>				
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-service">
+                            <h4><fa-icon [icon]="faGem" class="mr-2"></fa-icon>Joyeria el cristal</h4>
+                            <p>
+                                Tenemos los mas fino y bello en joyeria desde plata hasta oro blanco con incrustamientos de diamantes asi como enchapado de oro en otra joyeria.
+                            </p>								
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="single-service">
+                            <h4><fa-icon [icon]="faTshirt" class="mr-2"></fa-icon>Sport HN</h4>
+                            <p> 
+                                Tenemos la mejor ropa deportiva para esta ocacion de estar en casa y ponernos en forma, compra las mejores marcas al mejor precio con garantias.
+                            </p>									
+                        </div>
+                    </div>						
+                </div>
+            </div>	
+        </section>
+    </div>
+    <div class="row mt-2">
+        <section class="info-area" id="planes">
+            <div class="container-fluid">
+                <div class="row d-flex justify-content-end align-items-center">
+                    <div class="col-lg-6 col-md-12 info-left no-padding pl-0">
+                        <img class="img-fluid" src="../assets/img/info-img.jpg" alt="">
+                    </div>
+                    <div class="col-lg-6 col-md-12 info-right no-padding">
+                        <h1 class="titulo-formulario">Nuestros planes</h1>
+                            <ul class="lista-planes">
+                                <li>
+                                    <h6>Free:</h6>
+                                    <p>
+                                        Plan de acceso gratuito con el cual cuentan todos los recien registrados de manera automatica.
+                                    </p> 
+                                </li>
+                                <li>
+                                    <h6>Premium:</h6>
+                                    <p>
+                                        Plan mucho mas avanzado con muchas caracteristicas en edicion y creacion de sitios mas personalizados y el cual solo tiene un precio de tan solo $9.99/mes.
+                                    </p> 
+                                </li>
+                                <li>
+                                    <h6>Gold:</h6> 
+                                    <p>
+                                         Plan que incluye todas las caracteristicas del premium y añade nuevas como lo es una publicidad personalizada dentro de la plataforma a tan solo $14.99/mes.
+                                    </p>
+                                </li>
+                            </ul>
+                        <a class="btn btn-outline-primary boton-descubrir mt-3 ml-4 text-uppercase">Conoce mas &nbsp;&nbsp;&nbsp;&nbsp;<fa-icon [icon]="faArrowRight" class="mr-2"></fa-icon></a>
+                    </div>						
+                </div>
+            </div>	
+        </section>
+    </div><br><br>
+    <div class="row mt-5">
+            <div class="container">
+                <div class="row d-flex justify-content-center">
+                    <div class="menu-content col-lg-8">
+                        <div class="title text-center">
+                            <h1 class="mb-3 titulo-formulario">Si necesitas contactarnos, solo hazlo </h1>
+                            <p>Envianos tus inquietudes y comentarios atraves del siguiente formulario.</p>
+                        </div>
+                    </div>
+                </div>										
+                <form class="form-area mt-3">
+                    <div class="row">	
+                        <div class="col-lg-6 col-12 form-group">
+                            <input placeholder="Ingresa tu nombre" class="form-control mb-2" type="text">
+                            <input placeholder="Ingresa tu correo electronico" class="form-control mb-2" type="email">
+                            <input placeholder="Ingresa tu asunto" class="form-control mb-2" type="text">
+                        </div>
+                        <div class="col-lg-6 col-12 form-group">
+                            <textarea class="form-control mb-3" rows="5" placeholder="Mensaje a enviar"></textarea>
+                            <a class="btn btn-outline-primary boton-descubrir text-uppercase">Enviar mensaje &nbsp;&nbsp;&nbsp;&nbsp;<fa-icon [icon]="faArrowRight" class="mr-2"></fa-icon></a>	
+                        </div>
+                    </div>
+                </form>						
+            </div>	
+    </div>
+</div><br><br><br>
+<div class="container-fluid divFooter">
+    <div class="row parteArriba">
+    </div>
+    <div class="row">
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+            <h4 class="footerTitulo">Sobre nosotros</h4>
+            <p>
+                Somos una empresa comprometida con la satisfaccion de nuestros clientes asi como la seguridad de estos mismo, es por eso que cada dia mejoramos en brindar mejores herramientas en el diseno y creacion de sitios web.
+            </p> 
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+            <h4 class="footerTitulo">Contactanos</h4>
+            <p>
+                Puedes visitarnos en City mall tegucigal, mall las cascadas junto a Elektra.
+            </p>
+            <p>
+                O puedes llamarnos a 22345896, 22547896 horarios de 8:00am a 5:00pm de lunes a sabados.
+            </p>
+            <p>
+                Correos de contacto: customerservice@easycreative.com
+            </p> 
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+            <h4 class="footerTitulo">Suscribirse</h4>
+            <p>
+                Puedes confiar en nosotros, solo enviamos ofertas no Spam
+            </p>
+            <form class="navbar-form">
+                <div class="input-group add-on">
+                    <input class="form-control caja-enviar" placeholder="Correo electronico" type="email">
+                    <div style="position: absolute; left: -5000px;">
+                        <input tabindex="-1" type="text">
+                    </div>
+                    <div class="input-group-btn">
+                        <button class="btn-enviar">
+                            <fa-icon [icon]="faArrowRight"></fa-icon>
+                        </button>
+                    </div>
+                </div>
+            </form> 
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 footer-area">
+            <div class="footer-bottom d-flex justify-content-between align-items-center flex-wrap">
+                <div class="footer-social d-flex align-items-center">
+                    <a href="#">
+                        <fa-icon [icon]="faFacebookF"></fa-icon>
+                    </a>
+                    <a href="#">
+                        <fa-icon [icon]="faTwitter"></fa-icon>
+                    </a>
+                    <a href="#">
+                        <fa-icon [icon]="faInstagram"></fa-icon>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="hrDivisor">
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <p style="text-align: center;">© Todos los derechos reservados Easy Creative 2020.</p>
+        </div>
+    </div>
+    <div class="row parteAbajo">
+    </div>
+</div> 

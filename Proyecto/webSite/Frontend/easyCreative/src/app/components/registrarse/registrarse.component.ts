@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registrarse',
@@ -9,7 +10,7 @@ export class RegistrarseComponent implements OnInit {
 
   tipoUsuarioSelec:string = 'individual';
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -17,6 +18,10 @@ export class RegistrarseComponent implements OnInit {
   tipoUsuario(tipoUsuarioSelec){
     this.tipoUsuarioSelec = tipoUsuarioSelec;
     console.log(this.tipoUsuarioSelec);
+  }
+
+  paginaInicio(){
+    this.router.navigate(['/easy-creative']);
   }
 
 }
