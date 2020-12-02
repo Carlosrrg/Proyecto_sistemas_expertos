@@ -17,4 +17,7 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['/easy-creative']);
   }
 
+  irAdmin(){
+    this.router.navigate(['/admin']);
+  }
 }

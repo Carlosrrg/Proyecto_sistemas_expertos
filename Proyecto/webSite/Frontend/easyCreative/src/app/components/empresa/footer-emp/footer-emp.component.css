@@ -1,0 +1,76 @@
+.divFooter{
+    background-color: #222222;
+    width: 100%;
+    color: #757575;
+    padding-left: 35px;
+    padding-right: 35px;
+}
+.parteArriba{
+    margin-bottom: 70px;
+}
+.parteAbajo{
+    margin-top: 70px;
+}
+.footerTitulo{
+    color: white;
+    /*text-align: center;*/
+}
+.add-on{
+    background:#fff;border-radius:20px;
+    border:1px solid #fff
+}
+.form-control{
+    border:none;
+    border-radius:20px;
+    font-size:13px
+}
+.navbar-form{
+    width:100%
+}
+.btn-enviar{
+    color: white;
+    width: 80px;
+    height: 35px;
+    border: 0px;
+    background-color: #007DFE;
+    margin-top: 0px;
+    border-radius: 20px;
+}
+.input-group-btn{
+    padding: 0px;
+}
+.hrDivisor{
+    border: 1px solid;
+    stop-color: #757575;
+}
+.footer-area{
+    background-color:#222
+}
+.footer-area .footer-bottom{
+    padding-top:40px
+}
+.footer-area .footer-bottom a{
+    color: white
+}
+.footer-area .footer-bottom .footer-social{
+    text-align:right
+}
+.footer-area .footer-bottom .footer-social a{
+    background:#111111;
+    margin:2px;
+    padding:12px 16px;
+    -webkit-transition:all 0.3s ease 0s;
+    -moz-transition:all 0.3s ease 0s;
+    -o-transition:all 0.3s ease 0s;
+    transition:all 0.3s ease 0s
+}
+.footer-area .footer-bottom .footer-social a:hover{
+    background-color:#8490ff
+}
+.footer-area .footer-bottom .footer-social i{
+    color:#cccccc;
+    -webkit-transition:all 0.3s ease 0s;
+    -moz-transition:all 0.3s ease 0s;
+    -o-transition:all 0.3s ease 0s;
+    transition:all 0.3s ease 0s
+}
