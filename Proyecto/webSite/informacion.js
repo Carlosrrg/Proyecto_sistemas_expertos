@@ -104,14 +104,15 @@ db.usuarios.insertMany([
 
 
 /*administrador de plataforma*/
-db.administrador.insertMany([
+db.administradores.insertMany([
    {
-         "nombre":"Jose",
-         "apellido":"Perez",
-         "correo":"joseperez12@gmail.com",
+         "nombre": "Jose",
+         "apellido": "Perez",
+         "correo": "joseperez12@gmail.com",
          "contrasena": "123",
          "usuarioPlataforma": "adminJose",
-         "nivelPrioridad": "1"
+         "nivelPrioridad": "1",
+         "eliminar": false,
          "planesAnadidos":[
             {
                "nombrePlan":"Free",
@@ -123,17 +124,17 @@ db.administrador.insertMany([
          "plantillasAnadidas": [
             {
                "nombrePlantilla": "Ventas de electronicos",
-               "descripcion": "Plantilla hecha exclusivamente para aquellas empresas que vendas productos electonicos."
-               "html": '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Document</title></head><body></body></html>',
-               "css": 'body{background-color:green}',
-               "js": '',
+               "descripcion": "Plantilla hecha exclusivamente para aquellas empresas que vendas productos electonicos.",
+               "html": "<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><meta name='viewport' content='width=device-width, initial-scale=1.0'><title>Document</title></head><body></body></html>",
+               "css": "body{background-color:green}",
+               "js": "",
                "recursos": [
                   {
                      "tipoRecurso": "imagen",
                      "rutaImagen": "../assets/img/administradores/imagen.png",
                      "nombre": "imagen 1",
                      "tamanio": "5mb"
-                  }
+                  },
                   {
                      "tipoRecurso": "video",
                      "rutaImagen": "../assets/videos/administradores/video.mp4",
@@ -148,7 +149,7 @@ db.administrador.insertMany([
 
 
 /*Planes de plataforma*/
-db.planesPlataforma.insertMany([
+db.planes.insertMany([
    {
       "nombrePlan":"Free",
       "fechaEdicion": "12-12-20",
@@ -184,15 +185,16 @@ db.empresas.insertMany([
          "ciudad":"Tegucigalpa",
          "direccion":"col. predios del recreo",
          "genero":"Masculino",
+         "bloquear": false,
          "datosEmpresa": {
             "nombreEmpresa": "JetStereo",
-            "descripcionEmpresa": "Somos una empresa enfocada e la tecnologia y todo lo referente a ello."
+            "descripcionEmpresa": "Somos una empresa enfocada e la tecnologia y todo lo referente a ello.",
             "direccionEmpresa": "col. suyapa frente a unah",
             "telefono": "22345698",
             "correoEmpresa": "jetstereo@gmail.com",
             "categoriaEmpresa": "Electronicos",
             "planObtenido": "Free"
-         }
+         },
          "administracionRecursos": [
             {
                "tipoRecursos": "imagenes",
@@ -241,7 +243,7 @@ db.empresas.insertMany([
             {
                "principal": "true",
                "tituloPagina": "pagina 1",
-               "descripcion": "Pagina principal de muestra de productos electronicos."
+               "descripcion": "Pagina principal de muestra de productos electronicos.",
                "codigoHtml": '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Document</title></head><body></body></html>',
                "codigoCss": 'body{background-color:green}',
                "codigoJs": '',
@@ -251,7 +253,7 @@ db.empresas.insertMany([
             {
                "principal": "false",
                "tituloPagina": "pagina 2",
-               "descripcion": "Pagina secundaria de venta de productos electronicos al publico."
+               "descripcion": "Pagina secundaria de venta de productos electronicos al publico.",
                "codigoHtml": '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Document</title></head><body></body></html>',
                "codigoCss": 'body{background-color:green}',
                "codigoJs": '',
@@ -274,7 +276,7 @@ db.empresas.insertMany([
             "codigoExtraJs": '',
             "encabezados": [
                {
-                  "encabezado": "Inicio"
+                  "encabezado": "Inicio",
                   "subEncabezado": [
                      "Noticias",
                      "Categorias",
@@ -282,7 +284,7 @@ db.empresas.insertMany([
                   ]
                },
                {
-                  "encabezado": "Productos"
+                  "encabezado": "Productos",
                   "subEncabezado": [
                      "Electronicos",
                      "Linea blanca",
@@ -292,14 +294,14 @@ db.empresas.insertMany([
             ],
             "footers": [
                {
-                  "footer": "Sobre Nosotros"
+                  "footer": "Sobre Nosotros",
                   "subFooter": [
                      "Historia",
                      "Parnerts"
                   ]
                },
                {
-                  "footer": "Contactos"
+                  "footer": "Contactos",
                   "subFooter": [
                      "Emails",
                      "Telefonos",
@@ -322,7 +324,7 @@ db.empresas.insertMany([
          ],
          "registroProductos": [
             {
-               "nombreProductoAnadido": "PS5"
+               "nombreProductoAnadido": "PS5",
                "fechaAnadio": "12-12-20",
                "descripcionProducto": "Consola de quinta generacion de sony especial para gamers.",
                "precioProducto": 499,
@@ -334,7 +336,7 @@ db.empresas.insertMany([
                "calificacionProducto": 5
             },
             {
-               "nombreProductoAnadido": "lavadora samsung"
+               "nombreProductoAnadido": "lavadora samsung",
                "fechaAnadio": "12-12-20",
                "descripcionProducto": "lavadora de 48kg de la marca samsung con 7 modos de lavado.",
                "precioProducto": 399,
@@ -351,7 +353,7 @@ db.empresas.insertMany([
 
 
 /*Categorias de plataforma*/
-db.categoriasPlataforma.insertMany([
+db.categorias.insertMany([
    {
       "nombreCategoria": "Video juegos",
       "fechaAnadio": "12-12-20",
