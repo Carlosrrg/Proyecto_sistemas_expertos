@@ -7,12 +7,17 @@
             <hr><br>
             <section class="elementos-inicio">
                 <h2 class="titulo-h2">Registrarse</h2>
-                <form [formGroup]="formularioRegistro">
+                <form [formGroup]="formularioRegistro" (ngSubmit)="valorForm()">
                     <input [ngClass]="{'input-error':nombre.invalid && (nombre.dirty || nombre.touched)}" formControlName="nombre" class="form-control cajas-texto" type="text" placeholder="Nombre">
                     <input [ngClass]="{'input-error':apellido.invalid && (apellido.dirty || apellido.touched)}" formControlName="apellido" class="form-control cajas-texto" type="text" placeholder="Apellido">
                     <input [ngClass]="{'input-error':email.invalid && (email.dirty || email.touched)}" formControlName="email" class="form-control cajas-texto" type="email" placeholder="Correo electronico">
-                    <input [ngClass]="{'input-error':contrasena.invalid && (contrasena.dirty || contrasena.touched)}" formControlName="contrasena" class="form-control cajas-texto" type="password" placeholder="Contraseña">
-                    <input [ngClass]="{'input-error':contrasena2.invalid && (contrasena2.dirty || contrasena2.touched)}" formControlName="contrasena2" class="form-control cajas-texto" type="password" placeholder="Confirmar Contraseña">
+
+                    <form [formGroup]="formContrasenas">
+                        <input formControlName="contrasena" class="form-control cajas-texto" type="password" placeholder="Contraseña" [formGroup]="formContrasenas">
+                        <input formControlName="contrasena2" class="form-control cajas-texto" type="password" placeholder="Confirmar Contraseña" [formGroup]="formContrasenas">
+                        <div class="alert alert-danger" *ngIf="verificacionContrasenas == true">Las contrasenas no coiciden</div>
+                    </form>
+
                     <input [ngClass]="{'input-error':telefono.invalid && (telefono.dirty || telefono.touched)}" formControlName="telefono" class="form-control cajas-texto" type="text" placeholder="Telefono"><br>
                     Seleccione un pais:
                     <select [ngClass]="{'input-error':pais.invalid && (pais.dirty || pais.touched)}" formControlName="pais" class="form-control cajas-texto">
@@ -33,13 +38,15 @@
                         <input formControlName="nombreEmpresa" class="form-control" type="text" placeholder="Nombre de la empresa">
                     </section><br>
                     <section class="chk-terminos">
-                        <input type="checkbox"> Al hacer clic en Registrarse, acepta los terminos y condiciones de uso de Easy Creative.
+                        <input type="checkbox" formControlName="aceptarTerminos"> Al hacer clic en Registrarse, acepta los terminos y condiciones de uso de Easy Creative.
                         <p>
                             Para obtener mas informacion sobre como Easy Creative utiliza, comparte y protege sus datos personales, consulte la <a href="#">politica de privacidad</a> de Easy Creative.
                         </p>
                     </section>
                     <section class="seccion-registrarse">
-                        <button class="btn btn-primary btn-crear" (click)="valorForm()">Registrarse</button><br><br>
+                        <div class="alert alert-danger" *ngIf="verificacionCampos == true">Porfavor, Rellene los campos requeridos</div>
+                        <div class="alert alert-danger" *ngIf="verificacionTerminos == true">Porfavor, Acepte los terminos y condiciones de uso</div>
+                        <button type="submit" class="btn btn-primary btn-crear">Registrarse</button><br><br>
                         <strong>¿Ya tienes una cuenta? </strong><a href="#">Iniciar sesión</a>
                     </section>
                 </form> 

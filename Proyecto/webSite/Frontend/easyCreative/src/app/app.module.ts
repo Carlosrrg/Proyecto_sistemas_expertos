@@ -12,6 +12,7 @@ import { AdminModule } from './components/Administrador/admin.module';
 import { CompaniesModule } from './components/empresa/companies.module';
 import { UserModule } from './components/usuario/user.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     NgbModule,
     FontAwesomeModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
