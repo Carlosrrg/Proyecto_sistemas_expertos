@@ -102,6 +102,7 @@ export class LoginComponent implements OnInit {
 
     if (this.tipoUsuario == 'usuario') {
       this.errorLogin = false;
+      //this.router.navigate(['/usuario',this.idUsuarioIngresado,'editar-perfil']);
       this.router.navigate(['/usuario',this.idUsuarioIngresado,'editar-perfil']);
       //console.log('ID usuario logeado: ',this.idUsuarioIngresado);
       this.idUsuarioIngresado = '';

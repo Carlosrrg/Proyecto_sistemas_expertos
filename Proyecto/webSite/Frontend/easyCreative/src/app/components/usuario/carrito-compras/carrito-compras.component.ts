@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { ComunicacionService } from 'src/app/services/comunicacion.service';
 
 @Component({
   selector: 'app-carrito-compras',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarritoComprasComponent implements OnInit {
 
-  constructor() { }
+  idUsuario:string = '';
+
+  constructor(private comunicacionService:ComunicacionService) { }
 
   ngOnInit(): void {
+    this.comunicacionService.customMessage.subscribe(msg => this.idUsuario = msg);
+    console.log('Id de usuario desde [carritoComponet]: ', this.idUsuario);
   }
 
 }

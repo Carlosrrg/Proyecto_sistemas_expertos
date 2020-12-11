@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router'
-import { Observable } from 'rxjs';
-import {map} from 'rxjs/operators';
+import { Component, EventEmitter, OnInit, Output, Input } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { ComunicacionService } from 'src/app/services/comunicacion.service';
 
 @Component({
   selector: 'app-editar-perfil',
@@ -10,34 +9,13 @@ import {map} from 'rxjs/operators';
 })
 export class EditarPerfilComponent implements OnInit {
 
-  parametro:any = '';
+  idUsuario:string = '';
 
-  constructor(private route : ActivatedRoute) {
-    this.parametro = this.route.snapshot.params.id
-    console.log(this.parametro);
-  }
+  constructor(private comunicacionService:ComunicacionService) {}
 
-  ngOnInit(): void {
-    /*console.log(this.activatedRoute);
-
-    var id:any
-
-    this.activatedRoute.queryParams.subscribe(params=>{
-      id = params['id'] || null;
-    });
-
-    console.log(id);*/
-
-    //this.parametro = this.activatedRoute.snapshot.params.id;
-    //console.log(this.parametro);
-    /*this.activatedRoute.paramMap.subscribe( 
-      params=>{
-        console.log(params.get("id"));
-        /*if (params.has("id")) {
-          console.log(params.get("id"));
-        }*/
-     // }
-    //);
+  ngOnInit(){
+    this.comunicacionService.customMessage.subscribe(msg => this.idUsuario = msg);
+    console.log('Id de usuario desde [editarPerfilComponent]: ', this.idUsuario);
   }
 
 }

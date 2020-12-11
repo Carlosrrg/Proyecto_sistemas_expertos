@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { faMarker, faCreditCard, faShoppingBag } from '@fortawesome/free-solid-svg-icons';
+import { ComunicacionService } from 'src/app/services/comunicacion.service';
 
 @Component({
   selector: 'app-side-bar-usu',
@@ -7,16 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideBarUsuComponent implements OnInit {
 
-  constructor() { }
+  idUsuario:string = '';
 
-  ngOnInit(): void {
+  constructor(private comunicacionService:ComunicacionService) { }
+
+  ngOnInit(){
+    //this.comunicacionService.customMessage.subscribe(msg => this.idUsuario = msg);
+    //console.log('Id de usuario desde [sidebarComponet]: ', this.idUsuario);
   }
 
   opened=true;
+  
 
   ocultarMenu(evento){
     console.log('valor mostrado desde [sideBarEmp Component]: ', evento);
     this.opened = evento;
   }
 
+  
 }
