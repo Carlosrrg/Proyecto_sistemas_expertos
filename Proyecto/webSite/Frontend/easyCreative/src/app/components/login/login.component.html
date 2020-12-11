@@ -6,22 +6,25 @@
             </a>
             <hr><br>
             <section class="elementos-inicio">
-                <h2 class="titulo-h2">Inicio de sesión</h2> 
-                <input class="form-control cajas-texto" type="text" placeholder="Correo electronico">
-                <input class="form-control cajas-texto" type="text" placeholder="Contraseña">
-                <section class="chk-recuerdame">
-                    <input type="checkbox"> Recuerdame
-                </section>
-                 <br>
-                <div>
-                    <button class="btn btn-primary btn-iniciar" (click)="irAdmin()">Iniciar sesión</button>
-                </div>
+                <h2 class="titulo-h2">Inicio de sesión</h2>
+                <form [formGroup]="formularioLogin" (ngSubmit)="valorFormLogin()">
+                    <input [ngClass]="{'input-error':email.invalid && (email.dirty || email.touched)}" class="form-control cajas-texto" type="text" placeholder="Correo electronico" formControlName="email">
+                    <input [ngClass]="{'input-error':contrasena.invalid && (contrasena.dirty || contrasena.touched)}" class="form-control cajas-texto" type="password" placeholder="Contraseña" formControlName="contrasena">
+                    <section class="chk-recuerdame">
+                        <input type="checkbox"> Recuerdame
+                    </section>
+                    <div class="alert alert-danger" *ngIf="errorLogin == true">Datos ingresados erroneos o no existen en nuestros registros.</div>
+                    <br>
+                    <div>
+                        <button type="submit" class="btn btn-primary btn-iniciar">Iniciar sesión</button>
+                    </div>
+                </form> 
                 <br><br><br>
                 <h6><a href="#">¿Ha olvidado su contraseña?</a></h6>
                 <hr>
                 <section class="seccion-crear-cuenta">
                     <h4>¿Aun no posee una cuenta?</h4>
-                    <button class="btn btn-primary btn-crear">Crear una gratis ahora</button>
+                    <button class="btn btn-primary btn-crear" (click)="enviarRegistro()">Crear una gratis ahora</button>
                 </section>
             </section>
             <hr>

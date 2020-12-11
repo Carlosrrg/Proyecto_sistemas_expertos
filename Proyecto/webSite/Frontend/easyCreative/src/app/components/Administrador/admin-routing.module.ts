@@ -8,7 +8,7 @@ import { NuevosAdministradoresComponent } from '../Administrador/nuevos-administ
 
 
 const routes: Routes = [
-  { path: 'admin', component: EstructuraSitioAdminComponent,
+  { path: 'admin/:id', component: EstructuraSitioAdminComponent,
     children:[
       { path: 'visualizacion-planes-empresas', component: VizualizacionGestionEmpresasComponent },
       { path: 'gestion-planes', component: GestionPlanesComponent },

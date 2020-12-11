@@ -7,7 +7,7 @@ import { HistorialComprasComponent } from '../usuario/historial-compras/historia
 import { CarritoComprasComponent } from '../usuario/carrito-compras/carrito-compras.component';
 
 const routes: Routes = [
-  { path: 'usuario', component: EstructuraSitioUsuComponent, 
+  { path: 'usuario/:id', component: EstructuraSitioUsuComponent, 
     children:[
       { path: 'editar-perfil', component: EditarPerfilComponent },
       { path: 'metodo-pago', component: MetodoPagoComponent },

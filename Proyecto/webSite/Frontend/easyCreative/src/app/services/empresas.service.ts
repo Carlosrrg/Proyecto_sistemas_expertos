@@ -28,4 +28,9 @@ export class EmpresasService {
     });
   }
 
+  //Obtener todas las empresas
+  obtenerEmpresas():Observable<any>{
+    return this.httpClient.get('http://localhost:8888/empresas',{});
+  }
+
 }

@@ -9,7 +9,7 @@ import { RegistroProductoCategoriaComponent } from '../empresa/registro-producto
 import { AnadirShorcutsComponent } from '../empresa/anadir-shorcuts/anadir-shorcuts.component';
 
 const routes: Routes = [
-  { path: 'admin-companies', component: EstructuraSitioEmpComponent,
+  { path: 'admin-companies/:id', component: EstructuraSitioEmpComponent,
     children:[
       { path: 'editar-perfil-compania', component: EditarPerfilEmpresaComponent },
       { path: 'administracion-recursos', component: AdministracionRecursosComponent },
@@ -20,6 +20,7 @@ const routes: Routes = [
     ]
   }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

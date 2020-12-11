@@ -26,5 +26,9 @@ export class UsuarioService {
     });
   }
 
+  //Obtener todos los usuarios
+  obtenerUsuarios():Observable<any>{
+    return this.httpClient.get('http://localhost:8888/usuarios',{});
+  }
 
 }
