@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { SideBarUsuComponent } from '../side-bar-usu/side-bar-usu.component'
-import { ActivatedRoute } from '@angular/router'
+import { SideBarUsuComponent } from '../side-bar-usu/side-bar-usu.component';
+import { ActivatedRoute } from '@angular/router';
 import { ComunicacionService } from 'src/app/services/comunicacion.service';
 
 @Component({
@@ -37,7 +37,7 @@ export class EstructuraSitioUsuComponent implements OnInit {
   }
 
   toggleSidebar(eventoRecibido){
-    console.log('ejecutado desde el [estrutura sitio admin]', eventoRecibido);
+    console.log('ejecutado desde el [estrutura sitio usu]', eventoRecibido);
     this.sideBarComponent.ocultarMenu(eventoRecibido);
   }
 

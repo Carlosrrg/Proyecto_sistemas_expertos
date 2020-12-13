@@ -19,7 +19,7 @@ export class ElementosSidebarComponent implements OnInit {
   }
 
   mostrarVisualizacionGestion(){
-    console.log("ejecutado desde el sidebar");
+    //console.log("ejecutado desde el sidebar");
   }
 
 }

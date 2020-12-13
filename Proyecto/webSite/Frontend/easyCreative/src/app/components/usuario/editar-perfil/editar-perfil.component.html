@@ -9,68 +9,66 @@
         <div class="row">
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
                 <h5>Datos personales</h5>
-                <form>
+                <form [formGroup]="formularioUsuario" (ngSubmit)="datosUsuarioForm()">
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 pl-0">
-                                <input class="form-control" type="text" placeholder="Nombre">
+                                <input class="form-control" type="text" placeholder="Nombre" formControlName="nombre">
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 pl-0">
-                                <input class="form-control" type="text" placeholder="Apellido">
+                                <input class="form-control" type="text" placeholder="Apellido" formControlName="apellido">
                             </div>
                         </div>
                         <div class="row mb-2">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pl-0">
-                                <input class="form-control" type="email" placeholder="Correo electronico">
+                                <input class="form-control" type="email" placeholder="Correo electronico" formControlName="correo">
                             </div>
                         </div>
                         <div class="row mb-2">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pl-0">
-                                <input class="form-control" type="number" placeholder="Telefono">
+                                <input class="form-control" type="text" placeholder="Telefono" formControlName="telefono">
                             </div>
                         </div>
                         <div class="row mb-2">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pl-0">
-                                <select class="form-control">
-                                    <option value="0">--Seleccione un pais--</option>
-                                    <option value="1">Honduras</option>
-                                    <option value="2">Costa Rica</option>
-                                    <option value="3">Estados Unidos</option>
+                                Pais:
+                                <select class="form-control" formControlName="pais">
+                                    <option *ngFor="let pais of paises" value="{{pais}}">{{pais}}</option>
                                 </select>
                             </div>
                         </div>
                         <div class="row mb-2">
                             <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 col-7 pl-0">
-                                <input class="form-control" type="text" placeholder="Estado">
+                                <input class="form-control" type="text" placeholder="Estado" formControlName="estado">
                             </div>
                             <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5 pl-0">
-                                <input class="form-control" type="text" placeholder="Codigo Postal">
+                                <input class="form-control" type="text" placeholder="Codigo Postal" formControlName="codigoPostal">
                             </div>
                         </div>
                         <div class="row mb-2">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pl-0">
-                                <input class="form-control" type="text" placeholder="Ciudad">
+                                <input class="form-control" type="text" placeholder="Ciudad" formControlName="ciudad">
                             </div>
                         </div>
                         <div class="row mb-2">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pl-0">
-                                <input class="form-control" type="text" placeholder="Direccion">
+                                <input class="form-control" type="text" placeholder="Direccion" formControlName="direccion">
                             </div>
                         </div>
                         <div class="row mb-2">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pl-0">
                                 <strong>Genero</strong><br>
                                 <label for="rbt-genero1">
-                                    <input type="radio" name="rbt-genero" id="rbt-genero1"> Masculino
+                                    <input type="radio" formControlName="genero" id="rbt-genero1" value="Masculino"> Masculino
                                 </label>&nbsp;
                                 <label for="rbt-genero2">
-                                    <input type="radio" name="rbt-genero" id="rbt-genero2"> Femenino
+                                    <input type="radio" formControlName="genero" id="rbt-genero2" value="Femenino"> Femenino
                                 </label>
                             </div>
                         </div><br>
                         <div class="row mb-2">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pl-0 boton-centrar">
-                                <button type="button" class="btn btn-outline-primary" disabled>Guardar cambios</button>
+                                <button type="submit" class="btn btn-outline-primary">Guardar cambios</button>
                             </div>
                         </div>
                     </div>
@@ -78,25 +76,25 @@
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 contrasena-top">
                 <div class="container-fluid">
-                    <form>
+                    <form [formGroup]="formularioUsuarioContrasena" (ngSubmit)="datosUsuarioFormContrasena()">
                         <div class="row mb-2">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pl-0">
-                                <input class="form-control" type="password" placeholder="Contraseña actual">
+                                <input class="form-control" type="password" placeholder="Contraseña actual" formControlName="contrasenaActual">
                             </div>
                         </div>
                         <div class="row mb-2">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pl-0">
-                                <input class="form-control" type="password" placeholder="Nueva contraseña">
+                                <input class="form-control" type="password" placeholder="Nueva contraseña" formControlName="nuevaContrasena">
                             </div>
                         </div>
                         <div class="row mb-2">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pl-0">
-                                <input class="form-control" type="password" placeholder="Confirmar nueva contraseña">
+                                <input class="form-control" type="password" placeholder="Confirmar nueva contraseña" formControlName="nuevaContrasena2">
                             </div>
                         </div>
                         <div class="row mb-2">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pl-0 boton-centrar"><br>
-                                <button type="button" class="btn btn-outline-primary" disabled>Cambiar contraseña</button>
+                                <button type="submit" class="btn btn-outline-primary">Cambiar contraseña</button>
                             </div>
                         </div>
                     </form>

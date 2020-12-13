@@ -22,10 +22,26 @@ export class LandingPageComponent implements OnInit {
   faInstagram = faInstagram;
 
   collapsed = true;
+  usuarioLocal:boolean = true;
+  datosUsuario:any = {};
+  idUsuario:string = '';
+  tipoUsuario:string = '';
 
   constructor(private router:Router) { }
 
   ngOnInit(): void {
+    var localStorageUsuarios = window.localStorage;
+
+    if(localStorageUsuarios.getItem('datosUsuarioLocalStorage') == null){
+      this.usuarioLocal = false;
+    }
+    else{
+      this.usuarioLocal = true;
+      this.datosUsuario = JSON.parse(localStorageUsuarios.getItem('datosUsuarioLocalStorage'));
+      this.idUsuario = this.datosUsuario.idUsuario;
+      this.tipoUsuario = this.datosUsuario.tipoUsuario;
+      //console.log(this.idUsuario, this.tipoUsuario);
+    }
   }
 
   navegarIniciarSesion(){
@@ -38,6 +54,18 @@ export class LandingPageComponent implements OnInit {
 
   paginaInicio(){
     this.router.navigate(['/easy-creative']);
+  }
+
+  irCuenta(){
+    if (this.tipoUsuario == 'usuario') {
+      this.router.navigate(['/usuario',this.idUsuario,'editar-perfil']);
+    }
+    else if (this.tipoUsuario == 'empresa') {
+      this.router.navigate(['/admin-companies',this.idUsuario,'editar-perfil-compania']);
+    }
+    else if (this.tipoUsuario == 'administrador') {
+      this.router.navigate(['/admin',this.idUsuario,'visualizacion-planes-empresas']);
+    }
   }
 
 }

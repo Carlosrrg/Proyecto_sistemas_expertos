@@ -15,9 +15,13 @@ export class LoginComponent implements OnInit {
   usuariosArreglo:any = [];
   empresasArreglo:any = [];
   administradoresArreglo:any = [];
-  idUsuarioIngresado: String = ''; 
+  idUsuarioIngresado: string = ''; 
   tipoUsuario: String = '';
   errorLogin:boolean = false;
+  guardarLocalStorage:boolean = false;
+  datosUsuarioLocalStorage:any = {};
+  correoObtenido: string = '';
+  usuarioSession:any = {};
 
   formularioLogin = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -82,6 +86,7 @@ export class LoginComponent implements OnInit {
       if (this.usuariosArreglo[i].correo == this.formularioLogin.get('email').value && this.usuariosArreglo[i].contrasena == this.formularioLogin.get('contrasena').value) {
         this.idUsuarioIngresado = this.usuariosArreglo[i]._id;
         this.tipoUsuario = 'usuario';
+        this.correoObtenido = this.usuariosArreglo[i].correo;
         //console.log('el correo ingresado es: ', this.usuariosArreglo[i].correo, '  la contrasena ingresada es: ', this.usuariosArreglo[i].contrasena);
       }
     }
@@ -89,6 +94,7 @@ export class LoginComponent implements OnInit {
       if (this.empresasArreglo[i].correo == this.formularioLogin.get('email').value && this.empresasArreglo[i].contrasena == this.formularioLogin.get('contrasena').value) {
         this.idUsuarioIngresado = this.empresasArreglo[i]._id;
         this.tipoUsuario = 'empresa';
+        this.correoObtenido = this.empresasArreglo[i].correo;
         //console.log('el correo ingresado es: ', this.empresasArreglo[i].correo, '  la contrasena ingresada es: ', this.empresasArreglo[i].contrasena);
       }
     }
@@ -96,34 +102,60 @@ export class LoginComponent implements OnInit {
       if (this.administradoresArreglo[i].correo == this.formularioLogin.get('email').value && this.administradoresArreglo[i].contrasena == this.formularioLogin.get('contrasena').value) {
         this.idUsuarioIngresado = this.administradoresArreglo[i]._id;
         this.tipoUsuario = 'administrador';
+        this.correoObtenido = this.administradoresArreglo[i].correo;
         //console.log('el correo ingresado es: ', this.administradoresArreglo[i].correo, '  la contrasena ingresada es: ', this.administradoresArreglo[i].contrasena);
       }
     }
 
     if (this.tipoUsuario == 'usuario') {
       this.errorLogin = false;
-      //this.router.navigate(['/usuario',this.idUsuarioIngresado,'editar-perfil']);
       this.router.navigate(['/usuario',this.idUsuarioIngresado,'editar-perfil']);
       //console.log('ID usuario logeado: ',this.idUsuarioIngresado);
+      this.guardarLocalStorage = true;
+      this.datosUsuarioLocalStorage = {
+        correo: this.correoObtenido,
+        idUsuario: this.idUsuarioIngresado,
+        tipoUsuario: this.tipoUsuario
+      };
+      //console.log(this.datosUsuarioLocalStorage);
       this.idUsuarioIngresado = '';
     }  
     else if(this.tipoUsuario == 'empresa'){
       this.errorLogin = false;
       this.router.navigate(['/admin-companies',this.idUsuarioIngresado,'editar-perfil-compania']);
       //console.log('ID empresa logeado: ',this.idUsuarioIngresado);
+      this.guardarLocalStorage = true;
+      this.datosUsuarioLocalStorage = {
+        correo: this.correoObtenido,
+        idUsuario: this.idUsuarioIngresado,
+        tipoUsuario: this.tipoUsuario
+      };
       this.idUsuarioIngresado = '';
     }
     else if(this.tipoUsuario == 'administrador') {
       this.errorLogin = false;
       this.router.navigate(['/admin',this.idUsuarioIngresado,'visualizacion-planes-empresas']);
       //console.log('ID administrador logeado: ',this.idUsuarioIngresado);
+      this.guardarLocalStorage = true;
+      this.datosUsuarioLocalStorage = {
+        correo: this.correoObtenido,
+        idUsuario: this.idUsuarioIngresado,
+        tipoUsuario: this.tipoUsuario
+      };
       this.idUsuarioIngresado = '';
     }
     else{
       this.errorLogin = true;
+      this.guardarLocalStorage = false;
       console.log('Ningun usuario se ha ingresado o no existe en la base de datos');
+    }
+    if (this.guardarLocalStorage == true) {
+      var localStorageUsuarios = window.localStorage;
+      localStorageUsuarios.setItem ('datosUsuarioLocalStorage',JSON.stringify(this.datosUsuarioLocalStorage));
+      
+      this.usuarioSession = JSON.parse(localStorageUsuarios.getItem('datosUsuarioLocalStorage'));
+      //console.log('Datos de usuario desde localStorage: ', this.usuarioSession);
     }
     this.tipoUsuario = '';
   }
-
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { SideBarComponent } from '../side-bar/side-bar.component'
+import { SideBarComponent } from '../side-bar/side-bar.component';
+import { ActivatedRoute } from '@angular/router';
+import { ComunicacionService } from 'src/app/services/comunicacion.service';
 
 @Component({
   selector: 'app-estructura-sitio-admin',
@@ -9,7 +11,13 @@ import { SideBarComponent } from '../side-bar/side-bar.component'
 export class EstructuraSitioAdminComponent implements OnInit {
   @ViewChild('sideBar') sideBarComponent:SideBarComponent;
 
-  constructor() { }
+  idUsuarioSelec: string = '';
+
+  constructor(private route : ActivatedRoute, private comunicacionService:ComunicacionService) {
+    this.idUsuarioSelec = this.route.snapshot.params.id;
+    console.log('El ID del usuario seleccionado [estructuraSitioAdminComponent] es: ', this.idUsuarioSelec);
+    this.comunicacionService.changeMessage(this.idUsuarioSelec);
+  }
 
   ngOnInit(): void {
   }

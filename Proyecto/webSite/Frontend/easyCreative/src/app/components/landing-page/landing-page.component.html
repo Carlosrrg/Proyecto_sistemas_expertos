@@ -22,11 +22,14 @@
               <a class="nav-link botones-navbar" href="#planes">NUESTROS PLANES</a>
             </li>
             <li class="linea-divisor" *ngIf="collapsed == true"><strong>|</strong></li>
-            <li class="nav-item">
+            <li class="nav-item" [ngClass]="{'visible':usuarioLocal == false, 'no-visible':usuarioLocal == true}">
                 <a class="nav-link botones-navbar" (click)="navegarIniciarSesion()">INICIAR SECCION</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" [ngClass]="{'visible':usuarioLocal == false, 'no-visible':usuarioLocal == true}">
                 <a class="nav-link botones-navbar" (click)="navegarRegistrarse()">REGISTRARSE</a>
+            </li>
+            <li class="nav-item" [ngClass]="{'visible':usuarioLocal == true, 'no-visible':usuarioLocal == false}">
+                <a class="nav-link botones-navbar" (click)="irCuenta()">MI CUENTA</a>
             </li>
           </ul>     
         </div>

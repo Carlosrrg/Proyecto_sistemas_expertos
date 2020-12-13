@@ -31,4 +31,16 @@ export class UsuarioService {
     return this.httpClient.get('http://localhost:8888/usuarios',{});
   }
 
+  //Obtener un usuario seleccionado
+  datosUsuarioSeleccionado(idUsuario):Observable<any>{
+    return this.httpClient.get(`http://localhost:8888/usuarios/${idUsuario}/detalles`,{});
+  }
+
+  //Cambiar contrasena usuario
+  cambiarContrasena(data:any):Observable<any>{
+    return this.httpClient.put(`http://localhost:8888/usuarios/${data.idUsuario}/cambio-contrasena`,{
+      contrasena: data.nuevaContrasena
+    });
+  }
+
 }

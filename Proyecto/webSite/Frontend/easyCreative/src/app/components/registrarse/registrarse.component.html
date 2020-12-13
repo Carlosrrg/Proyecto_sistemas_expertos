@@ -47,11 +47,11 @@
                         <div class="alert alert-danger" *ngIf="verificacionCampos == true">Porfavor, Rellene los campos requeridos</div>
                         <div class="alert alert-danger" *ngIf="verificacionTerminos == true">Porfavor, Acepte los terminos y condiciones de uso</div>
                         <button type="submit" class="btn btn-primary btn-crear">Registrarse</button><br><br>
-                        <strong>¿Ya tienes una cuenta? </strong><a href="#">Iniciar sesión</a>
+                        <strong>¿Ya tienes una cuenta? </strong><a [routerLink]="['/inicio-sesion']">Iniciar sesión</a>
                     </section>
                 </form> 
                 <br><br>
-            </section>
+            </section><br><br><br>
             <hr>
             <section class="copyright">
                 © Todos los derechos reservados Easy Creative 2020.

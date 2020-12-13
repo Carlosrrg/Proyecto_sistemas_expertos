@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ComunicacionService } from 'src/app/services/comunicacion.service';
 
 @Component({
   selector: 'app-editar-perfil-empresa',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditarPerfilEmpresaComponent implements OnInit {
 
-  constructor() { }
+  idUsuario:string = '';
+
+  constructor(private comunicacionService:ComunicacionService) { }
 
   ngOnInit(): void {
+    this.comunicacionService.customMessage.subscribe(msg => this.idUsuario = msg);
+    console.log('Id de usuario desde [editarPerfilEmpComponent]: ', this.idUsuario);
   }
 
 }

@@ -37,8 +37,8 @@
               Empresa
             </a>
             <div ngbDropdownMenu aria-labelledby="navbarDropdown3" class="dropdown-menu">
-              <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Configuraciones</a>
-              <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Cerrar sesion</a>
+              <a ngbDropdownItem href="#" [routerLink]="['editar-perfil-compania']">Configuraciones</a>
+              <a ngbDropdownItem href="#" (click)="cerrarSession()">Cerrar sesion</a>
             </div>
           </li>
         </ul>

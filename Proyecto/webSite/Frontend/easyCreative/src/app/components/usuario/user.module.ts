@@ -15,6 +15,7 @@ import { MetodoPagoComponent } from '../usuario/metodo-pago/metodo-pago.componen
 import { HistorialComprasComponent } from '../usuario/historial-compras/historial-compras.component';
 import { CarritoComprasComponent } from '../usuario/carrito-compras/carrito-compras.component';
 import { ElementosSidebarUsuarioComponent } from '../usuario/elementos-sidebar-usuario/elementos-sidebar-usuario.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -33,6 +34,8 @@ import { ElementosSidebarUsuarioComponent } from '../usuario/elementos-sidebar-u
     CommonModule,
     UserRoutingModule,
     NgbModule,
+    ReactiveFormsModule,
+    FormsModule,
     FontAwesomeModule,
     SidebarModule.forRoot()
   ]

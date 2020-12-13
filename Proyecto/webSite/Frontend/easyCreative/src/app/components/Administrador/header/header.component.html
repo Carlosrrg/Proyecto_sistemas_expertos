@@ -37,8 +37,8 @@
               Administrador
             </a>
             <div ngbDropdownMenu aria-labelledby="navbarDropdown3" class="dropdown-menu">
-              <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Configuraciones</a>
-              <a ngbDropdownItem href="#" (click)="$event.preventDefault()">Cerrar sesion</a>
+              <a ngbDropdownItem href="#" [routerLink]="['visualizacion-planes-empresas']">Configuraciones</a>
+              <a ngbDropdownItem href="#" (click)="cerrarSession()">Cerrar sesion</a>
             </div>
           </li>
         </ul>

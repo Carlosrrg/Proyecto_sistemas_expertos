@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { faBars, faBell, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header-emp',
@@ -18,7 +19,7 @@ export class HeaderEmpComponent implements OnInit {
   collapsed = true; //mostrar el dropdown button
   public isCollapsed = false; //collapsar el sidebar
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -26,6 +27,11 @@ export class HeaderEmpComponent implements OnInit {
   toggleSidebar() {
     this.opened = !this.opened;
     this.onSideBar.emit(this.opened);
+  }
+
+  cerrarSession(){
+    localStorage.removeItem('datosUsuarioLocalStorage');
+    this.router.navigate(['/easy-creative']);
   }
 
 }

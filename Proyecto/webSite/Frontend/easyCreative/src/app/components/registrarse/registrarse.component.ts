@@ -182,5 +182,4 @@ export class RegistrarseComponent implements OnInit {
       console.log('selecciono el tipo de usuario ', this.tipoUsuarioSelec, ' pero las contrasenas no coinciden');
     }
   }
-
 }
