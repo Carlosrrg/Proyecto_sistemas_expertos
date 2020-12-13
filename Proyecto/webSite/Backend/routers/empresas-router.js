@@ -65,4 +65,21 @@ router.post('/registrar', function(req, res){
     }); 
 });
 
+//Obtener una empresa seleccionada
+router.get('/:idEmpresa/detalles',function(req, res){
+    empresa.find(
+        {
+            _id: req.params.idEmpresa
+        },
+        {})
+    .then(result=>{
+        res.send(result[0]);
+        res.end();
+    })
+    .catch(error=>{
+        res.send(error);
+        res.end();
+    });
+});
+
 module.exports = router;

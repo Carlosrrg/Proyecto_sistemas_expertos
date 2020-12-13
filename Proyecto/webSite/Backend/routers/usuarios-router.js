@@ -42,4 +42,37 @@ router.post('/registrar', function(req, res){
     }); 
 });
 
+//obtener un usuario seleccionado
+router.get('/:idUsuario/detalles',function(req, res){
+    usuario.find(
+        {
+            _id: req.params.idUsuario
+        },
+        {})
+    .then(result=>{
+        res.send(result[0]);
+        res.end();
+    })
+    .catch(error=>{
+        res.send(error);
+        res.end();
+    });
+});
+
+//actualizar la contrasena
+router.put('/:idUsuario/cambio-contrasena',function(req, res){
+    usuario.update(
+        {_id:req.params.idUsuario},
+        {
+            contrasena: req.body.contrasena,
+        }
+    ).then(result=>{
+        res.send(result);
+        res.end();
+    }).catch(error=>{
+        res.send(error);
+        res.end();
+    });
+});
+
 module.exports = router;
