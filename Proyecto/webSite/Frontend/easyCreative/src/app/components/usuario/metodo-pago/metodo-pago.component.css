@@ -7,3 +7,9 @@
 .btn-outline-primary{
     width: 160px;
 }
+.visible{
+    display: block;
+}
+.no-visible{
+    display: none;
+}

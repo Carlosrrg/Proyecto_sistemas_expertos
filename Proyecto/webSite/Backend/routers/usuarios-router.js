@@ -75,4 +75,65 @@ router.put('/:idUsuario/cambio-contrasena',function(req, res){
     });
 });
 
+//actualizar los datos de usuario
+router.put('/:idUsuario/actualizar-datos',function(req, res){
+    usuario.update(
+        {_id:req.params.idUsuario},
+        {
+            nombre: req.body.nombre,
+            apellido: req.body.apellido,
+            correo: req.body.correo,
+            telefono: req.body.telefono,
+            pais: req.body.pais,
+            estado: req.body.estado,
+            codigoPostal: req.body.codigoPostal,
+            ciudad: req.body.ciudad,
+            direccion: req.body.direccion,
+            genero: req.body.genero
+        }
+    ).then(result=>{
+        res.send(result);
+        res.end();
+    }).catch(error=>{
+        res.send(error);
+        res.end();
+    });
+});
+
+//Anadir metodos de pago
+router.put('/:idUsuario/metodo-pago',function(req, res){
+    usuario.update(
+        {_id:req.params.idUsuario},
+        {
+            $push:{
+                metodoPagos:{
+                    tipoPago: req.body.tipoPago,
+                    numeroTargeta: req.body.numeroTargeta,
+                    nombrePropietario: req.body.nombrePropietario,
+                    cvs: req.body.cvs,
+                    fechaVencimiento: {
+                        mes: req.body.mes,
+                        anio: req.body.anio
+                    },
+                    datosFacturacion: {
+                        direccion: req.body.direccion,
+                        ciudad: req.body.ciudad,
+                        estado: req.body.estado,
+                        codigoPostal: req.body.codigoPostal,
+                        telefono: req.body.telefono,
+                        pais: req.body.pais
+                    }
+                }
+            }
+        }
+    ).then(result=>{
+        res.send(result);
+        res.end();
+    }).catch(error=>{
+        res.send(error);
+        res.end();
+    });
+});
+
+
 module.exports = router;

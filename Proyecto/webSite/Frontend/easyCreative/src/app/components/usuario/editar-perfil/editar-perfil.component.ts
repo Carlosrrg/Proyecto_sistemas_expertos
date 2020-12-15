@@ -24,6 +24,14 @@ export class EditarPerfilComponent implements OnInit {
     "Panama"
   ];
 
+  vereficicarDatosContrasena:boolean = false;
+  vereficicarContrasenaActual:boolean = false;
+  vereficicarContrasena:boolean = false;
+  contrasenaExito:boolean = false;
+
+  verificarDatosUsu:boolean = false;
+  datosExitosos:boolean = false;
+
   formularioUsuario = new FormGroup({
     nombre: new FormControl('', [Validators.required]),
     apellido: new FormControl('', [Validators.required]),
@@ -51,7 +59,7 @@ export class EditarPerfilComponent implements OnInit {
     this.usuarioService.datosUsuarioSeleccionado(this.idUsuario).subscribe(
       res=>{
         this.datosUsuario = res;
-        console.log(this.datosUsuario);
+        //console.log(this.datosUsuario);
         this.formularioUsuario.get('nombre').setValue(res.nombre);
         this.formularioUsuario.get('apellido').setValue(res.apellido);
         this.formularioUsuario.get('correo').setValue(res.correo);
@@ -69,6 +77,7 @@ export class EditarPerfilComponent implements OnInit {
   datosUsuarioForm(){
     console.log('es valido el formulario: ', this.formularioUsuario.valid);
     if (this.formularioUsuario.valid) {
+      this.verificarDatosUsu = false;
       let data = {
         nombre: this.formularioUsuario.get('nombre').value,
         apellido: this.formularioUsuario.get('apellido').value,
@@ -79,11 +88,23 @@ export class EditarPerfilComponent implements OnInit {
         codigoPostal: this.formularioUsuario.get('codigoPostal').value,
         ciudad: this.formularioUsuario.get('ciudad').value,
         direccion: this.formularioUsuario.get('direccion').value,
-        genero: this.formularioUsuario.get('genero').value
+        genero: this.formularioUsuario.get('genero').value,
+        idUsuario: this.idUsuario
       }
-      console.log(data);
+      //console.log(data);
+      this.usuarioService.actualizarDatos(data).subscribe(
+        res=>{
+          console.log(res);
+        },
+        error=>{
+          console.log(error);
+        }
+      );
+      this.datosExitosos = true;
     }
     else{
+      this.datosExitosos = false;
+      this.verificarDatosUsu = true;
       console.log('formulario no valido');
     }
     
@@ -92,16 +113,11 @@ export class EditarPerfilComponent implements OnInit {
   datosUsuarioFormContrasena(){
     console.log('es valido el formulario de contrasena: ', this.formularioUsuarioContrasena.valid);
     if (this.formularioUsuarioContrasena.valid) {
+      this.vereficicarDatosContrasena = false;
       if (this.datosUsuario.contrasena == this.formularioUsuarioContrasena.get('contrasenaActual').value) {
+        this.vereficicarContrasenaActual = false;
         if (this.formularioUsuarioContrasena.get('nuevaContrasena').value == this.formularioUsuarioContrasena.get('nuevaContrasena2').value) {
-          /*
-          let data = {
-            contrasenaActual: this.formularioUsuarioContrasena.get('contrasenaActual').value,
-            nuevaContrasena: this.formularioUsuarioContrasena.get('nuevaContrasena').value,
-            nuevaContrasena2: this.formularioUsuarioContrasena.get('nuevaContrasena2').value
-          }
-          console.log(data);
-          */
+          this.vereficicarContrasena = false;
           let data = {
             idUsuario: this.idUsuario,
             nuevaContrasena: this.formularioUsuarioContrasena.get('nuevaContrasena').value
@@ -109,19 +125,27 @@ export class EditarPerfilComponent implements OnInit {
           this.usuarioService.cambiarContrasena(data).subscribe(
             res=>{
               console.log(res);
+            },
+            error=>{
+              console.log(error);
             }
           );
           console.log('contrasena cambiada por: ', this.formularioUsuarioContrasena.get('nuevaContrasena').value);
+          this.contrasenaExito = true;
         }
         else{
+          this.contrasenaExito = false;
+          this.vereficicarContrasena = true;
           console.log('Las contrasenas no coinciden');
         }
       }
       else{
+        this.vereficicarContrasenaActual = true;
         console.log('contrasena actual no existe en la BD');
       }
     }
     else{
+      this.vereficicarDatosContrasena = true;
       console.log('formulario no valido');
     }
   }

@@ -15,7 +15,7 @@ export class EstructuraSitioUsuComponent implements OnInit {
 
   constructor(private route : ActivatedRoute, private comunicacionService:ComunicacionService) {
     this.idUsuarioSelec = this.route.snapshot.params.id;
-    console.log('El ID del usuario seleccionado [estructuraSitioComponent] es: ', this.idUsuarioSelec);
+    //console.log('El ID del usuario seleccionado [estructuraSitioComponent] es: ', this.idUsuarioSelec);
     this.comunicacionService.changeMessage(this.idUsuarioSelec);
   }
 

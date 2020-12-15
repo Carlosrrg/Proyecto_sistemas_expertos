@@ -33,4 +33,45 @@ export class EmpresasService {
     return this.httpClient.get('http://localhost:8888/empresas',{});
   }
 
+  //Obtener una empresa seleccionada
+  datosEmpresaSeleccionada(idEmpresa):Observable<any>{
+    return this.httpClient.get(`http://localhost:8888/empresas/${idEmpresa}/detalles`,{});
+  }
+
+  //Actualizar datos de usuario
+  actualizarDatos(data:any):Observable<any>{
+    return this.httpClient.put(`http://localhost:8888/empresas/${data.idUsuario}/actualizar-datos`,{
+      nombre: data.nombre,
+      apellido: data.apellido,
+      correo: data.correo,
+      telefono: data.telefono,
+      pais: data.pais,
+      estado: data.estado,
+      codigoPostal: data.codigoPostal,
+      ciudad: data.ciudad,
+      direccion: data.direccion,
+      genero: data.genero
+    });
+  }
+
+  //Cambiar contrasena empresa
+  cambiarContrasena(data:any):Observable<any>{
+    return this.httpClient.put(`http://localhost:8888/empresas/${data.idUsuario}/cambio-contrasena`,{
+      contrasena: data.nuevaContrasena
+    });
+  }
+
+  //Actualizar Info empresa
+  actualizarInfo(data:any):Observable<any>{
+    return this.httpClient.put(`http://localhost:8888/empresas/${data.idUsuario}/datos-empresa`,{
+      nombreEmpresa: data.nombreEmpresa,
+      descripcionEmpresa: data.descripcionEmpresa,
+      direccionEmpresa: data.direccionEmpresa,
+      telefono: data.telefono,
+      correoEmpresa: data.correoEmpresa,
+      categoriaEmpresa: data.categoriaEmpresa,
+      planObtenido: data.planObtenido
+    });
+  }
+
 }

@@ -43,4 +43,38 @@ export class UsuarioService {
     });
   }
 
+  //Actualizar datos de usuario
+  actualizarDatos(data:any):Observable<any>{
+    return this.httpClient.put(`http://localhost:8888/usuarios/${data.idUsuario}/actualizar-datos`,{
+      nombre: data.nombre,
+      apellido: data.apellido,
+      correo: data.correo,
+      telefono: data.telefono,
+      pais: data.pais,
+      estado: data.estado,
+      codigoPostal: data.codigoPostal,
+      ciudad: data.ciudad,
+      direccion: data.direccion,
+      genero: data.genero
+    });
+  }
+
+  //Anadir metodos de pago
+  anadirPago(data:any):Observable<any>{
+    return this.httpClient.put(`http://localhost:8888/usuarios/${data.idUsuario}/metodo-pago`,{
+      tipoPago: data.tipoPago,
+      numeroTargeta: data.numeroTargeta,
+      nombrePropietario: data.nombrePropietario,
+      cvs: data.cvs,
+      mes: data.mes,
+      anio: data.anio,
+      direccion: data.direccion,
+      ciudad: data.ciudad,
+      estado: data.estado,
+      codigoPostal: data.codigoPostal,
+      telefono: data.telefono,
+      pais: data.pais
+    });
+  }
+
 }

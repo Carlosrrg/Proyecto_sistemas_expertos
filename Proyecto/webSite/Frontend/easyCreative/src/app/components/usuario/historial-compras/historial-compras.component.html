@@ -17,23 +17,14 @@
             <th>Envio</th>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>Producto 1</td>
-                <td>12-12-20</td>
-                <td>Targeta de debito</td>
-                <td>Nike</td>
-                <td>$30.99</td>
-                <td>$5.99</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Producto 2</td>
-                <td>12-12-19</td>
-                <td>Targeta de credito</td>
-                <td>Addidas</td>
-                <td>$18.99</td>
-                <td>Free</td>
+            <tr *ngFor="let compra of arregloHistorialCompras">
+                <td>{{compra.cantidad}}</td>
+                <td>{{compra.nombreProducto}}</td>
+                <td>{{compra.fechaCompra}}</td>
+                <td>{{compra.metodoPago}}</td>
+                <td>{{compra.nombreEmpresaVendido}}</td>
+                <td>{{compra.precio}}</td>
+                <td>{{compra.tipoEnvio}}</td>
             </tr>
         </tbody>
     </table>

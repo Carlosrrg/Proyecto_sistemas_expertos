@@ -18,6 +18,7 @@ import { ConfiguracionSitiosComponent } from '../empresa/configuracion-sitios/co
 import { RegistroProductoCategoriaComponent } from '../empresa/registro-producto-categoria/registro-producto-categoria.component';
 import { AnadirShorcutsComponent } from '../empresa/anadir-shorcuts/anadir-shorcuts.component';
 import { AnadirEditarProductosComponent } from '../empresa/anadir-editar-productos/anadir-editar-productos.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,8 @@ import { AnadirEditarProductosComponent } from '../empresa/anadir-editar-product
     CommonModule,
     CompaniesRoutingModule,
     NgbModule,
+    ReactiveFormsModule,
+    FormsModule,
     FontAwesomeModule,
     SidebarModule.forRoot()
   ]

@@ -1,5 +1,4 @@
-<Form>
-    <div class="container">
+<div class="container">
         <br>
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -15,102 +14,130 @@
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pl-0">
                     <strong>Metodo de pago</strong><br>
                     <label for="rbt-pago1">
-                        <input type="radio" name="rbt-pago" id="rbt-pago1"> Targeta de debito o credito
+                        <input type="radio" name="rbt-pago" (click)="tipoPago('tarjeta')" checked> Targeta de debito o credito
                     </label>&nbsp;
                     <label for="rbt-pago2">
-                        <input type="radio" name="rbt-pago" id="rbt-pago2"> paypal
+                        <input type="radio" name="rbt-pago" (click)="tipoPago('paypal')"> paypal
                     </label>
                 </div>
             </div>
         </div><br>
-        <div class="row">
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-                    <div class="container-fluid"> 
-                        <div class="row mb-2">
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pl-0">
-                                <input class="form-control" type="text" placeholder="Numero de targeta">
+        <div [ngClass]="{'visible':seleccionPago == 'tarjeta', 'no-visible':seleccionPago == 'paypal'}">
+            <form [formGroup]="formularioTargeta" (ngSubmit)="datosTargetaForm()">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <div class="container-fluid"> 
+                            <div class="row mb-2">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pl-0">
+                                    <input class="form-control" type="text" placeholder="Numero de targeta" formControlName="numeroTargeta">
+                                </div>
                             </div>
-                        </div>
-                        <div class="row mb-2">
-                            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8 pl-0">
-                                <input class="form-control" type="text" placeholder="Nombre del propietario">
+                            <div class="row mb-2">
+                                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8 pl-0">
+                                    <input class="form-control" type="text" placeholder="Nombre del propietario" formControlName="nombrePropietario">
+                                </div>
+                                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pl-0">
+                                    <input class="form-control" type="text" placeholder="CVS"
+                                    formControlName="cvs">
+                                </div>
                             </div>
-                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4 pl-0">
-                                <input class="form-control" type="text" placeholder="CVS">
+                            <div class="row mb-2">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pl-0">
+                                    <strong>Fecha de vencimiento</strong><br>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row mb-2">
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pl-0">
-                                <strong>Fecha de vencimiento</strong><br>
-                            </div>
-                        </div>
-                        <div class="row mb-2">
-                            <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 col-7 pl-0">
-                                <select class="form-control">
-                                    <option value="0">Mes</option>
-                                    <option value="1">Enero</option>
-                                    <option value="2">Febrero</option>
-                                    <option value="3">Marzo</option>
-                                </select>
-                            </div>
-                            <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5 pl-0">
-                                <select class="form-control">
-                                    <option value="0">Año</option>
-                                    <option value="1">1990</option>
-                                    <option value="2">1991</option>
-                                    <option value="3">1992</option>
-                                </select>
+                            <div class="row mb-2">
+                                <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 col-7 pl-0">
+                                    Mes
+                                    <select class="form-control" formControlName="mes">
+                                        <option *ngFor="let mes of meses" value="{{mes}}">{{mes}}</option>
+                                    </select>
+                                </div>
+                                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5 pl-0">
+                                    Año
+                                    <select class="form-control" formControlName="anio">
+                                        <option *ngFor="let anio of anios" value="{{anio}}">{{anio}}</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
                     </div>
-            </div>
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 facturacion-top">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pl-0">
-                            <strong>Datos de facturacion</strong><br>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 facturacion-top">
+                        <div class="container-fluid">
+                            <div class="row mb-2">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pl-0">
+                                    <strong>Datos de facturacion</strong><br>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pl-0">
+                                    <input class="form-control" type="text" placeholder="Direccion" formControlName="direccion">
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pl-0">
+                                    <input class="form-control" type="text" placeholder="Ciudad" formControlName="ciudad">
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 col-7 pl-0">
+                                    <input class="form-control" type="text" placeholder="Departamento o estado" formControlName="estado">
+                                </div>
+                                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5 pl-0">
+                                    <input class="form-control" type="text" placeholder="Codigo Postal" formControlName="codigoPostal">
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pl-0">
+                                    <input class="form-control" type="text" placeholder="Telefono" formControlName="telefono">
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pl-0">
+                                    Pais
+                                    <select class="form-control" formControlName="pais">
+                                        <option *ngFor="let pais of paises" value="{{pais}}">{{pais}}</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="row mb-2">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pl-0">
-                            <input class="form-control" type="text" placeholder="Direccion">
-                        </div>
+                </div><br>
+                <div class="row mb-2 alert alert-danger" *ngIf="verificarDatostargeta == true">Porfavor, ingrese todos los datos requeridos</div>
+                <div class="row mb-2 alert alert-success" *ngIf="ingresadaExito == true">Tarjeta ingresada con exito</div>
+                <br><br>
+                <div class="row mb-2">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pl-0 boton-centrar">
+                        <button type="submit" class="btn btn-outline-primary">Añadir</button>
                     </div>
-                    <div class="row mb-2">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pl-0">
-                            <input class="form-control" type="text" placeholder="Ciudad">
-                        </div>
-                    </div>
-                    <div class="row mb-2">
-                        <div class="col-xl-7 col-lg-7 col-md-7 col-sm-7 col-7 pl-0">
-                            <input class="form-control" type="text" placeholder="Departamento o estado">
-                        </div>
-                        <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-5 pl-0">
-                            <input class="form-control" type="text" placeholder="Codigo Postal">
-                        </div>
-                    </div>
-                    <div class="row mb-2">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pl-0">
-                            <input class="form-control" type="text" placeholder="Telefono">
-                        </div>
-                    </div>
-                    <div class="row mb-2">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pl-0">
-                            <select class="form-control">
-                                <option value="0">Pais</option>
-                                <option value="1">Honduras</option>
-                                <option value="2">Guatemala</option>
-                                <option value="3">Estados Unidos</option>
-                            </select>
+                </div>
+            </form><hr><br>
+            <div class="container-fluid">
+                <div class="row">
+                    <div *ngFor="let pago of metodoPagoArreglo" class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mb-2 ">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-2 " style="background-color: #007DFE; border: 1px solid grey; color: white; border-radius: 15px; width: 30px;">
+                                    <h4>Tarjeta Visa</h4>
+                                    <strong>Numero de tarjeta: {{pago.numeroTargeta}}</strong><br>
+                                    <strong>Propietario: {{pago.propietario}}</strong><br>
+                                    <strong>Fecha de vencimiento: {{pago.fechaVencimiento.mes}} / {{pago.fechaVencimiento.anio}}</strong><br><br>
+                                    <h6>Datos de facturacion:</h6>
+                                    <strong>Direccion: {{pago.datosFacturacion.direccionF}}</strong><br>
+                                    <strong>Ciudad: {{pago.datosFacturacion.ciudadF}}</strong><br>
+                                    <strong>Estado o Departamento: {{pago.datosFacturacion.estadoF}}</strong><br>
+                                    <strong>codigo postal: {{pago.datosFacturacion.codigoPostaF}}</strong><br>
+                                    <strong>Telefono: {{pago.datosFacturacion.telefonoF}}</strong><br>
+                                    <strong>Pais: {{pago.datosFacturacion.paisF}}</strong><br>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div><br><br>
-        <div class="row mb-2">
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pl-0 boton-centrar">
-                <button type="button" class="btn btn-outline-primary">Añadir</button>
-            </div>
         </div>
-    </div>
-</Form>
+        <div [ngClass]="{'visible':seleccionPago == 'paypal', 'no-visible':seleccionPago == 'tarjeta'}">
+            <strong>Vincule su cuenta de paypal =></strong>&nbsp;<a href="https://www.paypal.com/hn/home">vincular</a>
+        </div>
+</div>
+

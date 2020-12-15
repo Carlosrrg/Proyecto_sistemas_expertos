@@ -66,6 +66,8 @@
                                 </label>
                             </div>
                         </div><br>
+                        <div class="row mb-2 alert alert-danger" *ngIf="verificarDatosUsu == true">Porfavor, ingrese todos los datos requeridos</div><br>
+                        <div class="row mb-2 alert alert-success" *ngIf="datosExitosos == true">Datos actualizados con exito</div><br>
                         <div class="row mb-2">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pl-0 boton-centrar">
                                 <button type="submit" class="btn btn-outline-primary">Guardar cambios</button>
@@ -92,6 +94,10 @@
                                 <input class="form-control" type="password" placeholder="Confirmar nueva contraseña" formControlName="nuevaContrasena2">
                             </div>
                         </div>
+                        <div class="row mb-2 alert alert-danger" *ngIf="vereficicarDatosContrasena == true">Porfavor, ingrese todos los datos requeridos</div>
+                        <div class="row mb-2 alert alert-danger" *ngIf="vereficicarContrasenaActual == true">La contraseña actual no es correcta</div>
+                        <div class="row mb-2 alert alert-danger" *ngIf="vereficicarContrasena == true">Las contraseñas nuevas ingresadas no coinciden</div>
+                        <div class="row mb-2 alert alert-success" *ngIf="contrasenaExito == true">Contraseña cambiada con exito</div>
                         <div class="row mb-2">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 pl-0 boton-centrar"><br>
                                 <button type="submit" class="btn btn-outline-primary">Cambiar contraseña</button>
